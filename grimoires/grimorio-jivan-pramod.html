@@ -1,0 +1,2789 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grimório — Jivan Pramod | iAi.ECOssistema Base Tríade</title>
+  <meta name="description" content="Grimório de Jivan Pramod — Estrategista de Relações Humanas e Arquiteto de Experiências de Cuidado">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@600&family=JetBrains+Mono:wght@300&family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       CSS CUSTOM PROPERTIES — DESIGN SYSTEM
+       ============================================ */
+    :root {
+      --deep-cosmos: #1A0E2E;
+      --gold-sacred: #D4A017;
+      --purple-owl: #7B2D8E;
+      --amber-fire: #E8960C;
+      --forest-triade: #2D5A3D;
+      --earth-brown: #6B3A2A;
+      --electric-purple: #9B30FF;
+      --marina-night: #0D1B2A;
+      --warm-dock: #C4A35A;
+      --white-linen: #F5F0E8;
+      --teal-border: #0FA68E;
+
+      --ff-sacred: 'Cinzel Decorative', serif;
+      --ff-section: 'Cinzel', serif;
+      --ff-ui: 'Montserrat', sans-serif;
+      --ff-body: 'Lora', serif;
+      --ff-code: 'JetBrains Mono', monospace;
+    }
+
+    /* ============================================
+       RESET & BASE — MOBILE FIRST
+       ============================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--ff-body);
+      font-size: clamp(0.85rem, 2.5vw, 1rem);
+      line-height: 1.37;
+      color: var(--white-linen);
+      background: var(--deep-cosmos);
+      overflow-x: hidden;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: var(--teal-border);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--gold-sacred);
+    }
+
+    /* ============================================
+       TYPOGRAPHY — CLAMP SYSTEM
+       ============================================ */
+    .titulo-grimorio {
+      font-family: var(--ff-sacred);
+      font-size: clamp(2rem, 8vw, 3.5rem);
+      font-weight: 700;
+      color: var(--gold-sacred);
+      letter-spacing: 0.3em;
+      line-height: 1.2;
+    }
+
+    .titulo-secao {
+      font-family: var(--ff-section);
+      font-size: clamp(1.3rem, 5vw, 2rem);
+      font-weight: 600;
+      color: var(--gold-sacred);
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+
+    .subtitulo {
+      font-family: var(--ff-section);
+      font-size: clamp(1rem, 4vw, 1.5rem);
+      font-weight: 600;
+      color: var(--white-linen);
+      line-height: 1.37;
+    }
+
+    .body-text {
+      font-family: var(--ff-body);
+      font-size: clamp(0.85rem, 2.5vw, 1rem);
+      line-height: 1.37;
+    }
+
+    .label-text {
+      font-family: var(--ff-ui);
+      font-size: clamp(0.6rem, 1.8vw, 0.75rem);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* ============================================
+       GRIMÓRIO CONTAINER
+       ============================================ */
+    .grimorio {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    /* ============================================
+       SEÇÃO BASE — MOBILE FIRST
+       ============================================ */
+    .secao {
+      position: relative;
+      min-height: 100vh;
+      padding: clamp(1.5rem, 5vw, 3rem);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .secao > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* 137 pattern background */
+    .secao::before {
+      content: "137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  137  ";
+      position: absolute;
+      inset: -50%;
+      font-family: var(--ff-code);
+      font-size: 1rem;
+      color: rgba(30, 20, 55, 0.3);
+      word-spacing: 2rem;
+      line-height: 3;
+      transform: rotate(-53deg);
+      pointer-events: none;
+      z-index: 0;
+      letter-spacing: 1rem;
+    }
+
+    /* Gold line separator */
+    .gold-line {
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold-sacred), transparent);
+      margin: 1.5rem 0;
+    }
+
+    /* Section footer */
+    .secao-footer {
+      margin-top: auto;
+      padding-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .owl-mini {
+      width: 18px;
+      height: 18px;
+      background: url('assets/logo-iai-3d.png') center/contain no-repeat;
+      flex-shrink: 0;
+    }
+
+    .page-num {
+      font-family: var(--ff-code);
+      font-size: clamp(0.55rem, 1.5vw, 0.65rem);
+      color: rgba(245, 240, 232, 0.4);
+      font-weight: 300;
+    }
+
+    .mark-137 {
+      font-family: var(--ff-code);
+      font-size: 6pt;
+      color: rgba(245, 240, 232, 0.08);
+      font-weight: 300;
+    }
+
+    /* ============================================
+       1. CAPA
+       ============================================ */
+    .secao-capa {
+      background: linear-gradient(180deg, var(--marina-night) 0%, var(--deep-cosmos) 40%, var(--purple-owl) 100%);
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 100vh;
+      padding-top: clamp(2rem, 8vw, 4rem);
+      padding-bottom: clamp(2rem, 5vw, 3rem);
+    }
+
+    /* Marina simulation */
+    .marina-scene {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 35vh;
+      background: linear-gradient(180deg, var(--marina-night) 0%, #0A1628 60%, transparent 100%);
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .marina-scene::before {
+      content: '';
+      position: absolute;
+      bottom: 20%;
+      left: 10%;
+      width: 4px;
+      height: 60px;
+      background: linear-gradient(180deg, var(--gold-sacred), transparent);
+      box-shadow:
+        80px 10px 0 0 rgba(212, 160, 23, 0.5),
+        160px -5px 0 0 rgba(212, 160, 23, 0.3),
+        250px 15px 0 0 rgba(212, 160, 23, 0.4),
+        340px -8px 0 0 rgba(212, 160, 23, 0.6);
+      opacity: 0.7;
+    }
+
+    .marina-scene::after {
+      content: '';
+      position: absolute;
+      top: 10%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1px 1px at 25% 8%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1.5px 1.5px at 40% 20%, rgba(255,255,255,0.9), transparent),
+        radial-gradient(1px 1px at 55% 5%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1px 1px at 70% 18%, rgba(255,255,255,0.7), transparent),
+        radial-gradient(1.5px 1.5px at 85% 12%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px 1px at 92% 22%, rgba(255,255,255,0.4), transparent),
+        radial-gradient(1px 1px at 15% 25%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1px 1px at 48% 28%, rgba(255,255,255,0.3), transparent),
+        radial-gradient(1px 1px at 78% 6%, rgba(255,255,255,0.7), transparent);
+      pointer-events: none;
+    }
+
+    .marina-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      background: linear-gradient(180deg, transparent, var(--deep-cosmos));
+      z-index: 1;
+    }
+
+    .capa-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(1rem, 3vw, 1.5rem);
+      padding-top: 20vh;
+    }
+
+    .avatar-wrapper {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      padding: 3px;
+      background: linear-gradient(135deg, var(--teal-border), var(--purple-owl));
+      flex-shrink: 0;
+    }
+
+    .avatar-wrapper img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 25%;
+    }
+
+    .capa-frase {
+      font-family: var(--ff-body);
+      font-style: italic;
+      font-size: clamp(0.8rem, 2.5vw, 1rem);
+      color: var(--warm-dock);
+      max-width: min(500px, 85vw);
+      overflow-wrap: break-word;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+    }
+
+    .capa-logos {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .capa-logos img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .capa-brand {
+      font-family: var(--ff-ui);
+      font-size: clamp(0.6rem, 1.8vw, 0.75rem);
+      font-weight: 500;
+      color: rgba(245, 240, 232, 0.7);
+      letter-spacing: 0.05em;
+    }
+
+    .capa-137 {
+      position: absolute;
+      bottom: clamp(1rem, 3vw, 2rem);
+      right: clamp(1rem, 3vw, 2rem);
+    }
+
+    /* ============================================
+       2. FRASE-SEMENTE (ABERTURA)
+       ============================================ */
+    .secao-abertura {
+      background: linear-gradient(160deg, var(--deep-cosmos) 0%, #2A1545 100%);
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 70vh;
+    }
+
+    .secao-abertura::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('assets/mandala-grimorio.png') center/50% no-repeat;
+      opacity: 0.06;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .frase-semente-wrapper {
+      max-width: min(600px, 85vw);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .aspas-decorativas {
+      font-size: clamp(3rem, 10vw, 5rem);
+      color: var(--gold-sacred);
+      line-height: 0.5;
+      font-family: serif;
+      opacity: 0.8;
+    }
+
+    .frase-semente {
+      font-family: var(--ff-body);
+      font-style: italic;
+      font-size: clamp(0.95rem, 3vw, 1.25rem);
+      color: var(--white-linen);
+      line-height: 1.6;
+      overflow-wrap: break-word;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+    }
+
+    /* ============================================
+       3. IDENTIDADE ESSENCIAL + ARCO NARRATIVO
+       ============================================ */
+    .secao-identidade {
+      background: linear-gradient(180deg, var(--deep-cosmos) 0%, #1E1235 100%);
+      min-height: auto;
+    }
+
+    .identidade-dados {
+      margin: 1.5rem 0;
+    }
+
+    .identidade-dados dt {
+      font-family: var(--ff-ui);
+      font-size: clamp(0.6rem, 1.8vw, 0.75rem);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold-sacred);
+      margin-top: 1rem;
+    }
+
+    .identidade-dados dd {
+      font-family: var(--ff-body);
+      font-size: clamp(0.85rem, 2.5vw, 1rem);
+      color: var(--white-linen);
+      margin-left: 0;
+      padding: 0.25rem 0;
+    }
+
+    .identidade-dados dd a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      min-height: 44px;
+      padding: 0.25rem 0;
+    }
+
+    .narrativa-texto {
+      margin: 1.5rem 0;
+      font-family: var(--ff-body);
+      font-size: clamp(0.85rem, 2.5vw, 1rem);
+      color: rgba(245, 240, 232, 0.9);
+      line-height: 1.6;
+    }
+
+    .narrativa-texto strong {
+      color: var(--gold-sacred);
+    }
+
+    /* Timeline */
+    .timeline {
+      margin: 2rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .timeline-ato {
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      border-left: 4px solid;
+    }
+
+    .timeline-ato--i { border-color: var(--purple-owl); }
+    .timeline-ato--ii { border-color: var(--amber-fire); }
+    .timeline-ato--iii { border-color: var(--forest-triade); }
+
+    .timeline-ato__periodo {
+      font-family: var(--ff-code);
+      font-size: clamp(0.6rem, 1.8vw, 0.75rem);
+      color: rgba(245, 240, 232, 0.5);
+      font-weight: 300;
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-ato__titulo {
+      font-family: var(--ff-section);
+      font-size: clamp(1rem, 3.5vw, 1.25rem);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-ato--i .timeline-ato__titulo { color: #A855F7; }
+    .timeline-ato--ii .timeline-ato__titulo { color: var(--amber-fire); }
+    .timeline-ato--iii .timeline-ato__titulo { color: #34D399; }
+
+    .timeline-ato__items {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .timeline-ato__items li {
+      font-size: clamp(0.75rem, 2vw, 0.85rem);
+      color: rgba(245, 240, 232, 0.75);
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .timeline-ato__items li::before {
+      content: '>';
+      position: absolute;
+      left: 0;
+      color: rgba(245, 240, 232, 0.3);
+      font-family: var(--ff-code);
+    }
+
+    /* ============================================
+       4. CARTOGRAFIA DE COMPETÊNCIAS
+       ============================================ */
+    .secao-competencias {
+      background: linear-gradient(180deg, #1E1235 0%, var(--deep-cosmos) 100%);
+      min-height: auto;
+    }
+
+    .competencias-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .competencia-card {
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 10px;
+      padding: clamp(1rem, 4vw, 1.5rem);
+      border-top: 3px solid;
+    }
+
+    .competencia-card--cientifico { border-color: var(--purple-owl); }
+    .competencia-card--estrategico { border-color: var(--amber-fire); }
+    .competencia-card--relacional { border-color: var(--teal-border); }
+
+    .competencia-card__header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .competencia-card__icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .competencia-card__title {
+      font-family: var(--ff-section);
+      font-size: clamp(0.95rem, 3.5vw, 1.2rem);
+      font-weight: 600;
+      color: var(--gold-sacred);
+    }
+
+    .competencia-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .competencia-list li {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      padding-left: 1rem;
+      border-left: 2px solid rgba(245, 240, 232, 0.1);
+      font-size: clamp(0.8rem, 2.2vw, 0.9rem);
+    }
+
+    .competencia-list .formacao {
+      color: var(--white-linen);
+      font-weight: 700;
+    }
+
+    .competencia-list .instituicao {
+      font-family: var(--ff-ui);
+      font-size: clamp(0.6rem, 1.8vw, 0.7rem);
+      color: rgba(245, 240, 232, 0.5);
+      font-weight: 400;
+    }
+
+    /* ============================================
+       5. OS 5 PILARES
+       ============================================ */
+    .secao-pilares {
+      background: linear-gradient(180deg, var(--deep-cosmos) 0%, #1A1030 100%);
+      min-height: auto;
+    }
+
+    .pilares-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .pilar-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 8px;
+      min-height: 44px;
+    }
+
+    .pilar-card__num {
+      font-family: var(--ff-code);
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      font-weight: 300;
+      color: var(--gold-sacred);
+      opacity: 0.6;
+      line-height: 1;
+      flex-shrink: 0;
+      min-width: 2.5rem;
+      text-align: center;
+    }
+
+    .pilar-card__content {
+      flex: 1;
+    }
+
+    .pilar-card__nome {
+      font-family: var(--ff-section);
+      font-size: clamp(0.95rem, 3vw, 1.1rem);
+      font-weight: 600;
+      color: var(--white-linen);
+      margin-bottom: 0.25rem;
+    }
+
+    .pilar-card__desc {
+      font-family: var(--ff-body);
+      font-size: clamp(0.75rem, 2vw, 0.85rem);
+      color: rgba(245, 240, 232, 0.6);
+      font-style: italic;
+    }
+
+    /* ============================================
+       6. OBRA — SEXY MIND
+       ============================================ */
+    .secao-obra {
+      background: linear-gradient(180deg, #1A1030 0%, var(--deep-cosmos) 100%);
+      min-height: auto;
+    }
+
+    .obra-principal {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .obra-cover-placeholder {
+      width: 100%;
+      max-width: 220px;
+      aspect-ratio: 2/3;
+      background: linear-gradient(135deg, var(--purple-owl), var(--deep-cosmos));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin: 0 auto;
+      border: 1px solid rgba(212, 160, 23, 0.3);
+    }
+
+    .obra-cover-placeholder__title {
+      font-family: var(--ff-sacred);
+      font-size: clamp(1rem, 4vw, 1.3rem);
+      color: var(--gold-sacred);
+      text-align: center;
+    }
+
+    .obra-cover-placeholder__subtitle {
+      font-family: var(--ff-body);
+      font-size: clamp(0.6rem, 2vw, 0.75rem);
+      color: rgba(245, 240, 232, 0.6);
+      font-style: italic;
+      text-align: center;
+      padding: 0 1rem;
+    }
+
+    .obra-dados {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .obra-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .obra-tag {
+      font-family: var(--ff-ui);
+      font-size: clamp(0.55rem, 1.5vw, 0.65rem);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.35rem 0.75rem;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(245, 240, 232, 0.7);
+    }
+
+    .obra-sinopse {
+      font-size: clamp(0.8rem, 2.3vw, 0.95rem);
+      color: rgba(245, 240, 232, 0.85);
+      line-height: 1.6;
+    }
+
+    .obra-temas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .tema-chip {
+      font-family: var(--ff-ui);
+      font-size: clamp(0.55rem, 1.5vw, 0.65rem);
+      font-weight: 500;
+      padding: 0.3rem 0.65rem;
+      border-radius: 4px;
+      background: rgba(123, 45, 142, 0.3);
+      color: rgba(245, 240, 232, 0.8);
+      border: 1px solid rgba(123, 45, 142, 0.4);
+    }
+
+    .obra-destaque {
+      background: rgba(212, 160, 23, 0.08);
+      border: 1px solid rgba(212, 160, 23, 0.25);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+    }
+
+    .obra-destaque__label {
+      font-family: var(--ff-ui);
+      font-size: clamp(0.55rem, 1.5vw, 0.65rem);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold-sacred);
+      margin-bottom: 0.5rem;
+    }
+
+    .obra-destaque__text {
+      font-size: clamp(0.8rem, 2.2vw, 0.9rem);
+      color: rgba(245, 240, 232, 0.85);
+      line-height: 1.5;
+      font-style: italic;
+    }
+
+    .outras-publicacoes {
+      margin-top: 2rem;
+    }
+
+    .outras-publicacoes h3 {
+      font-family: var(--ff-section);
+      font-size: clamp(1rem, 3.5vw, 1.3rem);
+      font-weight: 600;
+      color: var(--gold-sacred);
+      margin-bottom: 1rem;
+    }
+
+    .pub-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .pub-list li {
+      padding: 0.5rem 0.75rem;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 6px;
+      font-size: clamp(0.8rem, 2.2vw, 0.9rem);
+    }
+
+    .pub-list li strong {
+      color: var(--white-linen);
+    }
+
+    .pub-list li span {
+      color: rgba(245, 240, 232, 0.5);
+      font-size: clamp(0.7rem, 1.8vw, 0.8rem);
+    }
+
+    /* ============================================
+       7. ECOSSISTEMA DIGITAL
+       ============================================ */
+    .secao-ecossistema {
+      background: linear-gradient(180deg, var(--deep-cosmos) 0%, #15102A 100%);
+      min-height: auto;
+    }
+
+    .eco-numero {
+      font-family: var(--ff-sacred);
+      font-size: clamp(3rem, 15vw, 6rem);
+      font-weight: 700;
+      color: var(--gold-sacred);
+      text-align: center;
+      line-height: 1;
+      margin: 1rem 0 0.25rem;
+    }
+
+    .eco-label {
+      font-family: var(--ff-ui);
+      font-size: clamp(0.6rem, 1.8vw, 0.75rem);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      text-align: center;
+      color: rgba(245, 240, 232, 0.5);
+      margin-bottom: 2rem;
+    }
+
+    .redes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .rede-card {
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 8px;
+      padding: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .rede-card__plataforma {
+      font-family: var(--ff-ui);
+      font-size: clamp(0.55rem, 1.5vw, 0.65rem);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: rgba(245, 240, 232, 0.5);
+    }
+
+    .rede-card__handle {
+      font-family: var(--ff-ui);
+      font-size: clamp(0.7rem, 2vw, 0.8rem);
+      font-weight: 500;
+      color: var(--white-linen);
+      overflow-wrap: break-word;
+    }
+
+    .rede-card__alcance {
+      font-family: var(--ff-code);
+      font-size: clamp(0.85rem, 3vw, 1.1rem);
+      font-weight: 300;
+      color: var(--gold-sacred);
+    }
+
+    /* Responsive table wrapper */
+    .table-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+    }
+
+    .table-responsive {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: clamp(0.7rem, 2vw, 0.85rem);
+      min-width: 320px;
+    }
+
+    .table-responsive th {
+      font-family: var(--ff-ui);
+      font-size: clamp(0.55rem, 1.5vw, 0.65rem);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--gold-sacred);
+      text-align: left;
+      padding: 0.75rem;
+      background: rgba(212, 160, 23, 0.08);
+      border-bottom: 1px solid rgba(212, 160, 23, 0.2);
+      white-space: nowrap;
+    }
+
+    .table-responsive td {
+      padding: 0.6rem 0.75rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: rgba(245, 240, 232, 0.85);
+      overflow-wrap: break-word;
+    }
+
+    .table-responsive tr:last-child td {
+      border-bottom: none;
+    }
+
+    .eco-subsecao-titulo {
+      font-family: var(--ff-section);
+      font-size: clamp(1rem, 3.5vw, 1.3rem);
+      font-weight: 600;
+      color: var(--gold-sacred);
+      margin: 2rem 0 1rem;
+    }
+
+    .midia-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .midia-list li {
+      padding: 0.5rem 0.75rem;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 6px;
+      font-size: clamp(0.75rem, 2vw, 0.85rem);
+      color: rgba(245, 240, 232, 0.8);
+    }
+
+    .midia-list li strong {
+      color: var(--white-linen);
+    }
+
+    /* ============================================
+       8. REPOSICIONAMENTO
+       ============================================ */
+    .secao-reposicionamento {
+      background: linear-gradient(180deg, #1A0E2E 0%, #251548 50%, #1A0E2E 100%);
+      min-height: auto;
+    }
+
+    .secao-reposicionamento::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 30%, rgba(123, 45, 142, 0.12), transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .gradient-triade {
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--forest-triade), var(--gold-sacred), var(--amber-fire));
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+    }
+
+    .tese-texto {
+      font-family: var(--ff-body);
+      font-size: clamp(0.85rem, 2.5vw, 1rem);
+      color: rgba(245, 240, 232, 0.9);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .tese-texto strong {
+      color: var(--gold-sacred);
+    }
+
+    .eco-papeis {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .eco-papel-card {
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 10px;
+      padding: clamp(1rem, 4vw, 1.5rem);
+      border-top: 3px solid;
+    }
+
+    .eco-papel-card--ciclo { border-color: var(--forest-triade); }
+    .eco-papel-card--ravi { border-color: var(--amber-fire); }
+
+    .eco-papel-card__header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .eco-papel-card__icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .eco-papel-card__title {
+      font-family: var(--ff-section);
+      font-size: clamp(0.95rem, 3.5vw, 1.2rem);
+      font-weight: 600;
+    }
+
+    .eco-papel-card--ciclo .eco-papel-card__title { color: #34D399; }
+    .eco-papel-card--ravi .eco-papel-card__title { color: var(--amber-fire); }
+
+    .eco-papel-card__section {
+      margin-bottom: 1rem;
+    }
+
+    .eco-papel-card__label {
+      font-family: var(--ff-ui);
+      font-size: clamp(0.55rem, 1.5vw, 0.65rem);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold-sacred);
+      margin-bottom: 0.5rem;
+    }
+
+    .eco-papel-card__bullets {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .eco-papel-card__bullets li {
+      font-size: clamp(0.75rem, 2vw, 0.85rem);
+      color: rgba(245, 240, 232, 0.8);
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .eco-papel-card__bullets li::before {
+      content: '>';
+      position: absolute;
+      left: 0;
+      color: rgba(245, 240, 232, 0.3);
+      font-family: var(--ff-code);
+    }
+
+    .eco-papel-card__funcao {
+      font-family: var(--ff-body);
+      font-size: clamp(0.8rem, 2.2vw, 0.9rem);
+      color: rgba(245, 240, 232, 0.85);
+      line-height: 1.5;
+      padding: 0.75rem 1rem;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 6px;
+      border-left: 3px solid;
+      margin-top: 0.5rem;
+    }
+
+    .eco-papel-card--ciclo .eco-papel-card__funcao { border-color: var(--forest-triade); }
+    .eco-papel-card--ravi .eco-papel-card__funcao { border-color: var(--amber-fire); }
+
+    /* Triângulo Estratégico */
+    .triangulo-estrategico {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .triangulo-card {
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      text-align: center;
+    }
+
+    .triangulo-card__icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .triangulo-card__nome {
+      font-family: var(--ff-section);
+      font-size: clamp(0.9rem, 3vw, 1.1rem);
+      font-weight: 600;
+      color: var(--gold-sacred);
+      margin-bottom: 0.25rem;
+    }
+
+    .triangulo-card__desc {
+      font-size: clamp(0.75rem, 2vw, 0.85rem);
+      color: rgba(245, 240, 232, 0.7);
+    }
+
+    .citacao-final {
+      margin-top: 2rem;
+      padding: 1.25rem;
+      background: rgba(212, 160, 23, 0.06);
+      border-left: 3px solid var(--gold-sacred);
+      border-radius: 0 8px 8px 0;
+      font-family: var(--ff-body);
+      font-style: italic;
+      font-size: clamp(0.85rem, 2.5vw, 1rem);
+      color: var(--warm-dock);
+      line-height: 1.6;
+    }
+
+    /* ============================================
+       9. GENIUS ZONE DASHBOARD
+       ============================================ */
+    .secao-genius-zone {
+      background: linear-gradient(180deg, var(--deep-cosmos) 0%, #120D22 100%);
+      min-height: auto;
+    }
+
+    .gz-badge {
+      display: inline-block;
+      font-family: var(--ff-ui);
+      font-size: clamp(0.55rem, 1.5vw, 0.65rem);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 20px;
+      background: rgba(232, 150, 12, 0.15);
+      color: var(--amber-fire);
+      border: 1px solid rgba(232, 150, 12, 0.3);
+      margin-bottom: 1.5rem;
+    }
+
+    .gz-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .gz-card {
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 10px;
+      padding: clamp(1rem, 4vw, 1.5rem);
+      border-top: 2px solid rgba(212, 160, 23, 0.3);
+    }
+
+    .gz-card__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .gz-card__framework {
+      font-family: var(--ff-section);
+      font-size: clamp(0.9rem, 3vw, 1.1rem);
+      font-weight: 600;
+      color: var(--gold-sacred);
+    }
+
+    .gz-card__tag {
+      font-family: var(--ff-ui);
+      font-size: clamp(0.5rem, 1.3vw, 0.6rem);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      background: rgba(155, 48, 255, 0.15);
+      color: var(--electric-purple);
+    }
+
+    /* Donut chart (Gay Hendricks) */
+    .donut-chart {
+      width: clamp(160px, 40vw, 200px);
+      height: clamp(160px, 40vw, 200px);
+      border-radius: 50%;
+      background: conic-gradient(
+        var(--gold-sacred) 0deg 162deg,
+        var(--amber-fire) 162deg 288deg,
+        rgba(245, 240, 232, 0.3) 288deg 342deg,
+        rgba(245, 240, 232, 0.1) 342deg 360deg
+      );
+      position: relative;
+      margin: 1rem auto;
+    }
+
+    .donut-chart::after {
+      content: '';
+      position: absolute;
+      inset: 30%;
+      border-radius: 50%;
+      background: #120D22;
+    }
+
+    .donut-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .donut-legend__item {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-family: var(--ff-ui);
+      font-size: clamp(0.6rem, 1.6vw, 0.7rem);
+      color: rgba(245, 240, 232, 0.8);
+    }
+
+    .donut-legend__dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Horizontal bars */
+    .bar-chart {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .bar-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .bar-item__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .bar-item__label {
+      font-family: var(--ff-ui);
+      font-size: clamp(0.65rem, 1.8vw, 0.75rem);
+      font-weight: 500;
+      color: rgba(245, 240, 232, 0.8);
+    }
+
+    .bar-item__value {
+      font-family: var(--ff-code);
+      font-size: clamp(0.6rem, 1.5vw, 0.7rem);
+      color: var(--gold-sacred);
+      font-weight: 300;
+    }
+
+    .bar-item__track {
+      width: 100%;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .bar-item__fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.5s ease;
+    }
+
+    .bar-item__fill--purple { background: linear-gradient(90deg, var(--purple-owl), var(--electric-purple)); }
+    .bar-item__fill--gold { background: linear-gradient(90deg, var(--amber-fire), var(--gold-sacred)); }
+    .bar-item__fill--teal { background: linear-gradient(90deg, var(--teal-border), #34D399); }
+    .bar-item__fill--forest { background: linear-gradient(90deg, var(--forest-triade), #34D399); }
+
+    /* Badge style */
+    .gz-profile-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      background: rgba(212, 160, 23, 0.08);
+      border: 1px solid rgba(212, 160, 23, 0.25);
+      border-radius: 8px;
+      font-family: var(--ff-section);
+      font-size: clamp(0.85rem, 2.5vw, 1rem);
+      color: var(--gold-sacred);
+    }
+
+    .gz-profile-desc {
+      font-size: clamp(0.75rem, 2vw, 0.85rem);
+      color: rgba(245, 240, 232, 0.7);
+      margin-top: 0.75rem;
+      line-height: 1.5;
+    }
+
+    /* Circular progress bars */
+    .circular-bars {
+      display: flex;
+      justify-content: center;
+      gap: clamp(1.5rem, 5vw, 2.5rem);
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .circular-bar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .circular-bar__svg {
+      width: clamp(80px, 20vw, 100px);
+      height: clamp(80px, 20vw, 100px);
+      transform: rotate(-90deg);
+    }
+
+    .circular-bar__bg {
+      fill: none;
+      stroke: rgba(255, 255, 255, 0.08);
+      stroke-width: 6;
+    }
+
+    .circular-bar__fill {
+      fill: none;
+      stroke-width: 6;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 0.8s ease;
+    }
+
+    .circular-bar__label {
+      font-family: var(--ff-ui);
+      font-size: clamp(0.6rem, 1.6vw, 0.7rem);
+      font-weight: 500;
+      color: rgba(245, 240, 232, 0.7);
+      text-align: center;
+    }
+
+    .circular-bar__percent {
+      font-family: var(--ff-code);
+      font-size: clamp(0.8rem, 2.5vw, 1rem);
+      font-weight: 300;
+      color: var(--gold-sacred);
+    }
+
+    /* Hormozi metrics */
+    .hormozi-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+
+    .hormozi-metric {
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 8px;
+      padding: 0.75rem;
+      text-align: center;
+    }
+
+    .hormozi-metric__score {
+      font-family: var(--ff-code);
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      font-weight: 300;
+      color: var(--gold-sacred);
+      line-height: 1;
+    }
+
+    .hormozi-metric__max {
+      font-family: var(--ff-code);
+      font-size: clamp(0.6rem, 1.5vw, 0.7rem);
+      color: rgba(245, 240, 232, 0.3);
+    }
+
+    .hormozi-metric__label {
+      font-family: var(--ff-ui);
+      font-size: clamp(0.55rem, 1.5vw, 0.65rem);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: rgba(245, 240, 232, 0.6);
+      margin-top: 0.25rem;
+    }
+
+    .hormozi-metric__nota {
+      font-family: var(--ff-body);
+      font-size: clamp(0.55rem, 1.3vw, 0.6rem);
+      color: rgba(245, 240, 232, 0.4);
+      font-style: italic;
+      margin-top: 0.35rem;
+      line-height: 1.3;
+    }
+
+    /* ============================================
+       10. PLANO DE AÇÃO + SQUAD
+       ============================================ */
+    .secao-plano-acao {
+      background: linear-gradient(180deg, #120D22 0%, var(--deep-cosmos) 100%);
+      min-height: auto;
+    }
+
+    .plano-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+      border-left: 2px solid rgba(212, 160, 23, 0.2);
+      padding-left: 1.5rem;
+    }
+
+    .plano-periodo {
+      position: relative;
+    }
+
+    .plano-periodo::before {
+      content: '';
+      position: absolute;
+      left: calc(-1.5rem - 5px);
+      top: 0.5rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold-sacred);
+      border: 2px solid var(--deep-cosmos);
+    }
+
+    .plano-periodo__label {
+      font-family: var(--ff-ui);
+      font-size: clamp(0.55rem, 1.5vw, 0.65rem);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold-sacred);
+      margin-bottom: 0.5rem;
+    }
+
+    .plano-periodo__titulo {
+      font-family: var(--ff-section);
+      font-size: clamp(1rem, 3.5vw, 1.25rem);
+      font-weight: 600;
+      color: var(--white-linen);
+      margin-bottom: 0.75rem;
+    }
+
+    .plano-checklist {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .plano-checklist li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: clamp(0.75rem, 2vw, 0.85rem);
+      color: rgba(245, 240, 232, 0.8);
+      min-height: 44px;
+    }
+
+    .plano-checklist li::before {
+      content: '[ ]';
+      font-family: var(--ff-code);
+      font-size: clamp(0.6rem, 1.5vw, 0.7rem);
+      color: rgba(245, 240, 232, 0.3);
+      flex-shrink: 0;
+    }
+
+    .antipadroes {
+      margin: 2rem 0;
+      padding: 1rem 1.25rem;
+      background: rgba(232, 60, 60, 0.06);
+      border: 1px solid rgba(232, 60, 60, 0.2);
+      border-radius: 8px;
+    }
+
+    .antipadroes__titulo {
+      font-family: var(--ff-section);
+      font-size: clamp(0.95rem, 3vw, 1.1rem);
+      font-weight: 600;
+      color: #F87171;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .antipadroes__list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .antipadroes__list li {
+      font-size: clamp(0.75rem, 2vw, 0.85rem);
+      color: rgba(245, 240, 232, 0.7);
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .antipadroes__list li::before {
+      content: '\26A0';
+      position: absolute;
+      left: 0;
+    }
+
+    .squad-card {
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 10px;
+      padding: clamp(1rem, 4vw, 1.5rem);
+      border-top: 3px solid var(--teal-border);
+    }
+
+    .squad-card__titulo {
+      font-family: var(--ff-section);
+      font-size: clamp(1rem, 3.5vw, 1.25rem);
+      font-weight: 600;
+      color: var(--gold-sacred);
+      margin-bottom: 1rem;
+    }
+
+    .squad-roles {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .squad-role {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.5rem 0.75rem;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 6px;
+    }
+
+    .squad-role__icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .squad-role__info {
+      flex: 1;
+    }
+
+    .squad-role__name {
+      font-family: var(--ff-ui);
+      font-size: clamp(0.7rem, 2vw, 0.8rem);
+      font-weight: 600;
+      color: var(--white-linen);
+    }
+
+    .squad-role__desc {
+      font-size: clamp(0.6rem, 1.6vw, 0.7rem);
+      color: rgba(245, 240, 232, 0.5);
+    }
+
+    /* ============================================
+       11. CONTRACAPA
+       ============================================ */
+    .secao-contracapa {
+      background: linear-gradient(180deg, var(--deep-cosmos) 0%, var(--marina-night) 100%);
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 100vh;
+    }
+
+    .contracapa-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(1.25rem, 4vw, 2rem);
+      max-width: min(500px, 90vw);
+    }
+
+    .qr-placeholder {
+      width: clamp(120px, 30vw, 160px);
+      height: clamp(120px, 30vw, 160px);
+      border: 2px dashed rgba(212, 160, 23, 0.3);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .qr-placeholder__icon {
+      font-size: 2rem;
+      opacity: 0.4;
+    }
+
+    .qr-placeholder__label {
+      font-family: var(--ff-ui);
+      font-size: clamp(0.5rem, 1.3vw, 0.6rem);
+      color: rgba(245, 240, 232, 0.3);
+    }
+
+    .contracapa-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      width: 100%;
+    }
+
+    .contracapa-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 8px;
+      min-height: 44px;
+      font-family: var(--ff-ui);
+      font-size: clamp(0.75rem, 2vw, 0.85rem);
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+
+    .contracapa-link:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .contracapa-link--portal {
+      border: 1px solid rgba(212, 160, 23, 0.3);
+      color: var(--gold-sacred);
+    }
+
+    .contracapa-link--ecoin {
+      border: 1px solid rgba(15, 166, 142, 0.3);
+      color: var(--teal-border);
+    }
+
+    .contracapa-link--instagram {
+      border: 1px solid rgba(155, 48, 255, 0.3);
+      color: var(--electric-purple);
+    }
+
+    .contracapa-link--iai {
+      border: 1px solid rgba(232, 150, 12, 0.3);
+      color: var(--amber-fire);
+    }
+
+    .contracapa-link--whatsapp {
+      border: 1px solid rgba(45, 90, 61, 0.4);
+      color: #34D399;
+    }
+
+    .contracapa-versao {
+      font-family: var(--ff-ui);
+      font-size: clamp(0.55rem, 1.5vw, 0.65rem);
+      color: rgba(245, 240, 232, 0.3);
+      letter-spacing: 0.05em;
+    }
+
+    .frase-orion {
+      font-family: var(--ff-body);
+      font-style: italic;
+      font-size: clamp(0.75rem, 2vw, 0.85rem);
+      color: rgba(245, 240, 232, 0.4);
+      max-width: min(400px, 80vw);
+    }
+
+    /* ============================================
+       TABLET BREAKPOINT (768px)
+       ============================================ */
+    @media (min-width: 768px) {
+      .secao {
+        padding: clamp(2rem, 5vw, 4rem) clamp(3rem, 8vw, 6rem);
+      }
+
+      .capa-content {
+        padding-top: 15vh;
+      }
+
+      .avatar-wrapper {
+        width: 140px;
+        height: 140px;
+      }
+
+      .competencias-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+
+      .competencia-card:last-child {
+        grid-column: 1 / -1;
+      }
+
+      .redes-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .eco-papeis {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+
+      .triangulo-estrategico {
+        flex-direction: row;
+      }
+
+      .triangulo-card {
+        flex: 1;
+      }
+
+      .gz-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+
+      .hormozi-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    /* ============================================
+       DESKTOP BREAKPOINT (1024px)
+       ============================================ */
+    @media (min-width: 1024px) {
+      .grimorio {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .secao {
+        padding: clamp(3rem, 5vw, 4rem) clamp(3rem, 6vw, 5rem);
+      }
+
+      .secao-capa {
+        aspect-ratio: 210 / 297;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .avatar-wrapper {
+        width: 150px;
+        height: 150px;
+      }
+
+      .secao-abertura {
+        min-height: 80vh;
+      }
+
+      .timeline {
+        flex-direction: row;
+        gap: 0;
+        align-items: stretch;
+        position: relative;
+      }
+
+      .timeline::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--purple-owl), var(--amber-fire), var(--forest-triade));
+        z-index: 0;
+      }
+
+      .timeline-ato {
+        flex: 1;
+        border-left: none;
+        border-top: 4px solid;
+        position: relative;
+        z-index: 1;
+      }
+
+      .competencias-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .competencia-card:last-child {
+        grid-column: auto;
+      }
+
+      .obra-principal {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+
+      .obra-cover-placeholder {
+        margin: 0;
+        flex-shrink: 0;
+      }
+    }
+
+    /* ============================================
+       PRINT STYLES
+       ============================================ */
+    @media print {
+      .secao {
+        page-break-after: always;
+        break-after: page;
+        min-height: auto;
+      }
+
+      .secao:last-child {
+        page-break-after: auto;
+      }
+
+      @page {
+        size: A4;
+        margin: 10mm;
+      }
+
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .secao::before {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<article class="grimorio">
+
+  <!-- ==========================================
+       1. CAPA
+       ========================================== -->
+  <section class="secao secao-capa">
+    <div class="marina-scene">
+      <div class="marina-overlay"></div>
+    </div>
+
+    <div class="capa-content">
+      <div class="avatar-wrapper">
+        <img src="assets/jivan-pramod.jpeg" alt="Jivan Pramod" width="130" height="130">
+      </div>
+
+      <h1 class="titulo-grimorio">GRIMÓRIO</h1>
+
+      <p class="subtitulo" style="letter-spacing: 0.2em; color: var(--white-linen);">JIVAN PRAMOD</p>
+
+      <p class="capa-frase">Desenvolvendo Estratégias Inovadoras nos Relacionamentos Humanos</p>
+
+      <div class="capa-logos">
+        <img src="assets/logo-iai-3d.png" alt="iAi Coruja" width="36" height="36">
+        <img src="assets/logo-ciclo-estacoes.jpeg" alt="Ciclo das Estações" width="36" height="36">
+      </div>
+
+      <p class="capa-brand">iAi.ECOssistema Base Tríade</p>
+    </div>
+
+    <span class="capa-137 mark-137">.137</span>
+
+    <footer class="secao-footer">
+      <span class="owl-mini"></span>
+      <span class="page-num">p.1/37</span>
+    </footer>
+  </section>
+
+  <!-- ==========================================
+       2. FRASE-SEMENTE (ABERTURA)
+       ========================================== -->
+  <section class="secao secao-abertura">
+    <div class="frase-semente-wrapper">
+      <span class="aspas-decorativas" aria-hidden="true">&ldquo;</span>
+      <blockquote class="frase-semente">
+        Jivan não abandonou o Tantra. O Tantra se expandiu nele — até não caber mais em um consultório, em um palco, em uma tela. Agora precisa de uma floresta, de uma hospedaria, de um ecossistema inteiro para se expressar.
+      </blockquote>
+      <span class="aspas-decorativas" aria-hidden="true">&rdquo;</span>
+    </div>
+
+    <footer class="secao-footer">
+      <span class="owl-mini"></span>
+      <span class="page-num">p.2/37</span>
+    </footer>
+  </section>
+
+  <!-- ==========================================
+       3. IDENTIDADE ESSENCIAL + ARCO NARRATIVO
+       ========================================== -->
+  <section class="secao secao-identidade">
+    <div class="gold-line"></div>
+
+    <h2 class="titulo-secao">Identidade Essencial</h2>
+
+    <dl class="identidade-dados">
+      <dt>Nome</dt>
+      <dd>Jivan Pramod</dd>
+
+      <dt>Alcunha Histórica</dt>
+      <dd>O Rei do Tantra</dd>
+
+      <dt>Posicionamento Emergente</dt>
+      <dd>Estrategista de Relações Humanas | Arquiteto de Experiências de Cuidado</dd>
+
+      <dt>Base</dt>
+      <dd>Curitiba, PR — atuação internacional (18+ países)</dd>
+
+      <dt>WhatsApp</dt>
+      <dd>
+        <a href="https://wa.me/5521999993413" target="_blank" rel="noopener">+55 21 999 993 413</a>
+      </dd>
+    </dl>
+
+    <div class="gold-line"></div>
+
+    <h3 class="subtitulo" style="color: var(--gold-sacred); margin-top: 1.5rem;">A Metamorfose: Do Tantra à Estratégia Relacional</h3>
+
+    <div class="narrativa-texto">
+      <p>Jivan Pramod construiu sua reputação como o maior nome do Tantra no Brasil — 800k+ no TikTok, 92k+ no Instagram, workshops em 18 países, TV, livro publicado. Mas toda grande jornada tem um ponto de inflexão.</p>
+      <br>
+      <p>O Tantra foi o <strong>campo de treinamento</strong>. O terreno onde Jivan aprendeu a ler corpos, decifrar emoções não ditas, criar espaços seguros de vulnerabilidade, conduzir transformações em ambientes de intimidade extrema. Cada workshop de "O Caminho do Amor" (100+ realizados, 7.000+ pessoas), cada sessão de Magnetismo Tântrico, cada formação de coach — tudo isso forjou algo raro: <strong>um especialista em relações humanas que aprendeu pelo toque, pela presença, pela escuta do que não se diz.</strong></p>
+      <br>
+      <p>Agora, essa inteligência relacional profunda ganha um novo campo de aplicação — mais amplo, mais estratégico, mais impactante.</p>
+    </div>
+
+    <div class="gold-line"></div>
+
+    <h3 class="subtitulo" style="color: var(--gold-sacred); margin-top: 1rem;">O Arco Narrativo</h3>
+
+    <div class="timeline">
+      <div class="timeline-ato timeline-ato--i">
+        <div class="timeline-ato__periodo">2011–2020</div>
+        <h4 class="timeline-ato__titulo">ATO I — O Terapeuta</h4>
+        <ul class="timeline-ato__items">
+          <li>Domínio do corpo, da presença, da energia</li>
+          <li>Centro Metamorfose &rarr; Método Deva Nishok &rarr; 18 países</li>
+          <li>Construção de reputação: "O Rei do Tantra"</li>
+        </ul>
+      </div>
+
+      <div class="timeline-ato timeline-ato--ii">
+        <div class="timeline-ato__periodo">2020–2025</div>
+        <h4 class="timeline-ato__titulo">ATO II — O Coach Digital</h4>
+        <ul class="timeline-ato__items">
+          <li>Escala via conteúdo: TikTok 684k, Instagram 92k</li>
+          <li>Produtos digitais: Xeque Mate, Jardim Secreto, Sexy Mind</li>
+          <li>Instituto JP: gestão emocional corporativa</li>
+          <li>O slogan já muda: "Estratégias Inovadoras nas Relações Humanas"</li>
+        </ul>
+      </div>
+
+      <div class="timeline-ato timeline-ato--iii">
+        <div class="timeline-ato__periodo">2025 &rarr;</div>
+        <h4 class="timeline-ato__titulo">ATO III — O Arquiteto de Cuidado</h4>
+        <ul class="timeline-ato__items">
+          <li>iAi.ECOssistema Base Tríade</li>
+          <li>Ciclo das Estações: Cuidar de Quem Cuida</li>
+          <li>Hospedarias Biofílicas: Ravi Experience</li>
+          <li>De entertainer a líder estratégico</li>
+          <li>A experiência hoteleira 5 estrelas finalmente encontra seu propósito</li>
+          <li>O tantra não morre — ele se expande em hospitalidade viva</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer class="secao-footer">
+      <span class="owl-mini"></span>
+      <span class="page-num">p.3/37</span>
+    </footer>
+  </section>
+
+  <!-- ==========================================
+       4. CARTOGRAFIA DE COMPETÊNCIAS
+       ========================================== -->
+  <section class="secao secao-competencias">
+    <h2 class="titulo-secao">Cartografia de Competências</h2>
+
+    <div class="competencias-grid">
+      <!-- Núcleo Científico -->
+      <div class="competencia-card competencia-card--cientifico">
+        <div class="competencia-card__header">
+          <span class="competencia-card__icon" aria-hidden="true">&#9879;</span>
+          <h3 class="competencia-card__title">Núcleo Científico</h3>
+        </div>
+        <ul class="competencia-list">
+          <li>
+            <span class="formacao">Neurociências e Comportamento</span>
+            <span class="instituicao">PUCRS</span>
+          </li>
+          <li>
+            <span class="formacao">Terapia Complementar em Saúde Humana</span>
+            <span class="instituicao">Sindicato de Terapeutas Alternativos do Paraná</span>
+          </li>
+          <li>
+            <span class="formacao">Hipnose Quântica</span>
+            <span class="instituicao">Escola Murillo Cucatto</span>
+          </li>
+          <li>
+            <span class="formacao">Life Coaching e Comportamento Humano</span>
+            <span class="instituicao">Instituto de Coach em Desenvolvimento Humano</span>
+          </li>
+          <li>
+            <span class="formacao">Método Deva Nishok (todas as modalidades)</span>
+            <span class="instituicao">Centro Metamorfose</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Núcleo Estratégico-Operacional -->
+      <div class="competencia-card competencia-card--estrategico">
+        <div class="competencia-card__header">
+          <span class="competencia-card__icon" aria-hidden="true">&#9881;</span>
+          <h3 class="competencia-card__title">Núcleo Estratégico-Operacional</h3>
+        </div>
+        <ul class="competencia-list">
+          <li>
+            <span class="formacao">Gestão hoteleira 5 estrelas</span>
+            <span class="instituicao">Experiência prática — hospitalidade de alto padrão, operações, experiência do hóspede</span>
+          </li>
+          <li>
+            <span class="formacao">Gestão emocional corporativa</span>
+            <span class="instituicao">Instituto JP — treinamentos corporativos, liderança empática</span>
+          </li>
+          <li>
+            <span class="formacao">Facilitação internacional</span>
+            <span class="instituicao">18+ países, 100+ workshops, 60+ imersões</span>
+          </li>
+          <li>
+            <span class="formacao">Formação de líderes</span>
+            <span class="instituicao">ABRAPCOACHING, UniBrasil, Instituto Português de Naturologia (Lisboa)</span>
+          </li>
+          <li>
+            <span class="formacao">Produção de conteúdo digital</span>
+            <span class="instituicao">1.2M+ seguidores totais, múltiplas plataformas, funis de produto digital</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Núcleo Relacional -->
+      <div class="competencia-card competencia-card--relacional">
+        <div class="competencia-card__header">
+          <span class="competencia-card__icon" aria-hidden="true">&#128156;</span>
+          <h3 class="competencia-card__title">Núcleo Relacional (DNA Diferencial)</h3>
+        </div>
+        <ul class="competencia-list">
+          <li>
+            <span class="formacao">Leitura corporal e emocional profunda</span>
+            <span class="instituicao">13+ anos de prática terapêutica</span>
+          </li>
+          <li>
+            <span class="formacao">Criação de espaços seguros de vulnerabilidade</span>
+            <span class="instituicao">Facilitação de workshops íntimos</span>
+          </li>
+          <li>
+            <span class="formacao">Escuta ativa de alta sensibilidade</span>
+            <span class="instituicao">Formação em terapia + neurociências</span>
+          </li>
+          <li>
+            <span class="formacao">Condução de transformações em grupo</span>
+            <span class="instituicao">"O Caminho do Amor" — manipulação de estados vibracionais</span>
+          </li>
+          <li>
+            <span class="formacao">Comunicação persuasiva e empática</span>
+            <span class="instituicao">Coaching + 5 pilares metodológicos</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <footer class="secao-footer">
+      <span class="owl-mini"></span>
+      <span class="page-num">p.4/37</span>
+    </footer>
+  </section>
+
+  <!-- ==========================================
+       5. OS 5 PILARES
+       ========================================== -->
+  <section class="secao secao-pilares">
+    <h2 class="titulo-secao">Os 5 Pilares</h2>
+    <p class="body-text" style="color: rgba(245, 240, 232, 0.6); margin-bottom: 0.5rem;">Metodologia Jivan Pramod</p>
+
+    <div class="pilares-list">
+      <div class="pilar-card">
+        <span class="pilar-card__num">01</span>
+        <div class="pilar-card__content">
+          <h3 class="pilar-card__nome">Escuta Ativa</h3>
+          <p class="pilar-card__desc">ouvir além das palavras</p>
+        </div>
+      </div>
+
+      <div class="pilar-card">
+        <span class="pilar-card__num">02</span>
+        <div class="pilar-card__content">
+          <h3 class="pilar-card__nome">Empatia</h3>
+          <p class="pilar-card__desc">sentir o campo relacional</p>
+        </div>
+      </div>
+
+      <div class="pilar-card">
+        <span class="pilar-card__num">03</span>
+        <div class="pilar-card__content">
+          <h3 class="pilar-card__nome">Comunicação Clara</h3>
+          <p class="pilar-card__desc">verdade com cuidado</p>
+        </div>
+      </div>
+
+      <div class="pilar-card">
+        <span class="pilar-card__num">04</span>
+        <div class="pilar-card__content">
+          <h3 class="pilar-card__nome">Criação de Conexões</h3>
+          <p class="pilar-card__desc">tecer vínculos autênticos</p>
+        </div>
+      </div>
+
+      <div class="pilar-card">
+        <span class="pilar-card__num">05</span>
+        <div class="pilar-card__content">
+          <h3 class="pilar-card__nome">Confiança</h3>
+          <p class="pilar-card__desc">o alicerce de tudo</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="secao-footer">
+      <span class="owl-mini"></span>
+      <span class="page-num">p.5/37</span>
+    </footer>
+  </section>
+
+  <!-- ==========================================
+       6. OBRA — SEXY MIND
+       ========================================== -->
+  <section class="secao secao-obra">
+    <h2 class="titulo-secao">Obra Publicada</h2>
+
+    <div class="obra-principal">
+      <div class="obra-cover-placeholder">
+        <span class="obra-cover-placeholder__title">Sexy Mind</span>
+        <span class="obra-cover-placeholder__subtitle">Nada Menos que o Extraordinário</span>
+      </div>
+
+      <div class="obra-dados">
+        <div class="obra-meta">
+          <span class="obra-tag">ASIN B0BJQYD1B4</span>
+          <span class="obra-tag">Kindle 2022</span>
+          <span class="obra-tag">Hotmart</span>
+        </div>
+
+        <p class="obra-sinopse">
+          Manual de reeducação sexual e relacional — do básico ao avançado. Não é sobre forma, é sobre essência. Compartilha anos de experiência transformando a vida íntima e relacional de milhares de pessoas.
+        </p>
+
+        <div class="obra-temas">
+          <span class="tema-chip">Sexualidade consciente</span>
+          <span class="tema-chip">Mindset relacional</span>
+          <span class="tema-chip">Magnetismo tântrico</span>
+          <span class="tema-chip">Técnicas práticas</span>
+          <span class="tema-chip">Neurociência do comportamento</span>
+        </div>
+
+        <div class="obra-destaque">
+          <div class="obra-destaque__label">Significância para o Reposicionamento</div>
+          <p class="obra-destaque__text">
+            O livro já carrega a semente da transição — "Sexy Mind" é sobre <strong style="color: var(--gold-sacred);">mentalidade</strong>, não sobre técnica. É sobre a mente que cria relações extraordinárias.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="outras-publicacoes">
+      <h3>Outras Publicações</h3>
+      <ul class="pub-list">
+        <li><strong>"Desperte sua Melhor Versão"</strong> <span>— coautoria</span></li>
+        <li><strong>"Xeque Mate"</strong> <span>— programa/ebook sobre estratégia relacional</span></li>
+        <li><strong>"Jardim Secreto"</strong> <span>— comunidade de conhecimento</span></li>
+        <li><strong>"Os 10 Segredos"</strong> <span>— programa digital</span></li>
+      </ul>
+    </div>
+
+    <footer class="secao-footer">
+      <span class="owl-mini"></span>
+      <span class="page-num">p.6/37</span>
+    </footer>
+  </section>
+
+  <!-- ==========================================
+       7. ECOSSISTEMA DIGITAL
+       ========================================== -->
+  <section class="secao secao-ecossistema">
+    <h2 class="titulo-secao">Ecossistema Digital</h2>
+
+    <div class="eco-numero">1.2M+</div>
+    <p class="eco-label">seguidores totais</p>
+
+    <div class="redes-grid">
+      <div class="rede-card">
+        <span class="rede-card__plataforma">TikTok</span>
+        <span class="rede-card__handle">@jivan.pramod</span>
+        <span class="rede-card__alcance">~684k</span>
+      </div>
+      <div class="rede-card">
+        <span class="rede-card__plataforma">Instagram</span>
+        <span class="rede-card__handle">@jivan.pramod</span>
+        <span class="rede-card__alcance">~92k</span>
+      </div>
+      <div class="rede-card">
+        <span class="rede-card__plataforma">Instagram</span>
+        <span class="rede-card__handle">@soujivan</span>
+        <span class="rede-card__alcance">Ativo</span>
+      </div>
+      <div class="rede-card">
+        <span class="rede-card__plataforma">Instagram</span>
+        <span class="rede-card__handle">@institutojivanpramod</span>
+        <span class="rede-card__alcance">Ativo</span>
+      </div>
+      <div class="rede-card">
+        <span class="rede-card__plataforma">Facebook</span>
+        <span class="rede-card__handle">/CoachJivanPramod</span>
+        <span class="rede-card__alcance">~3.5k</span>
+      </div>
+      <div class="rede-card">
+        <span class="rede-card__plataforma">LinkedIn</span>
+        <span class="rede-card__handle">/jivan-pramod</span>
+        <span class="rede-card__alcance">Ativo</span>
+      </div>
+      <div class="rede-card">
+        <span class="rede-card__plataforma">SoundCloud</span>
+        <span class="rede-card__handle">/jivanpramod</span>
+        <span class="rede-card__alcance">Podcast</span>
+      </div>
+    </div>
+
+    <h3 class="eco-subsecao-titulo">Domínios Web</h3>
+    <div class="table-wrapper">
+      <table class="table-responsive">
+        <thead>
+          <tr>
+            <th>Domínio</th>
+            <th>Função</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>jivanpramod.com</td>
+            <td>Hub principal — "Estratégias Inovadoras nas Relações Humanas"</td>
+          </tr>
+          <tr>
+            <td>jivanpramod.com.br</td>
+            <td>Institucional — coaching, formação, palestras</td>
+          </tr>
+          <tr>
+            <td>coachdesexualidade.com</td>
+            <td>Marca de coaching (legado)</td>
+          </tr>
+          <tr>
+            <td>artedecompartilhar.net</td>
+            <td>Projeto com Satya Kali — casais</td>
+          </tr>
+          <tr>
+            <td>institutojp.com</td>
+            <td>Treinamentos corporativos — gestão emocional</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="eco-subsecao-titulo">Plataformas de Produto</h3>
+    <div class="table-wrapper">
+      <table class="table-responsive">
+        <thead>
+          <tr>
+            <th>Plataforma</th>
+            <th>Produtos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hotmart</td>
+            <td>Xeque Mate, Sexy Mind, Massagem Tântrica</td>
+          </tr>
+          <tr>
+            <td>Sympla</td>
+            <td>Eventos presenciais (formações, workshops)</td>
+          </tr>
+          <tr>
+            <td>Eventbrite</td>
+            <td>"Impróprio para Menores" (Talk Show itinerante)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="eco-subsecao-titulo">Mídia e Aparições</h3>
+    <ul class="midia-list">
+      <li><strong>CNT</strong> — Podcast "Tudo é Mais Um Pouco"</li>
+      <li><strong>Rádio Coaching</strong> — Perfil de coach destacado</li>
+      <li><strong>Pena Areia PDC</strong> — Artigo "Desafiando as Fronteiras da Sexualidade com o Magnetismo Tântrico" (2024)</li>
+      <li><strong>Famous Birthdays</strong> — Listado como personalidade do TikTok</li>
+      <li><strong>Famosos.com</strong> — Mensagens personalizadas em vídeo</li>
+    </ul>
+
+    <footer class="secao-footer">
+      <span class="owl-mini"></span>
+      <span class="page-num">p.7/37</span>
+    </footer>
+  </section>
+
+  <!-- ==========================================
+       8. REPOSICIONAMENTO iAi.ECOssistema
+       ========================================== -->
+  <section class="secao secao-reposicionamento">
+    <div class="gradient-triade"></div>
+
+    <h2 class="titulo-secao">Reposicionamento Estratégico</h2>
+    <p class="subtitulo" style="color: var(--amber-fire); margin-bottom: 1.5rem;">iAi.ECOssistema Base Tríade</p>
+
+    <h3 class="subtitulo" style="color: var(--gold-sacred); margin-bottom: 1rem;">A Tese</h3>
+
+    <div class="tese-texto">
+      <p>Tudo que Jivan construiu no universo do Tantra — a leitura emocional, a criação de ambientes de transformação, a condução de grupos em estados alterados de conexão, a gestão de experiências imersivas — converge naturalmente para um papel que poucos poderiam ocupar:</p>
+      <br>
+      <p><strong>Líder de experiências de cuidado em escala.</strong></p>
+      <br>
+      <p>Somar a isso a experiência prática como <strong>gerente de hotel 5 estrelas</strong> — onde aprendeu a orquestrar hospitalidade de alto padrão, gerir equipes de serviço, garantir excelência operacional — e o perfil se completa de forma rara.</p>
+    </div>
+
+    <h3 class="subtitulo" style="color: var(--gold-sacred); margin-bottom: 1.5rem;">Papel no iAi.ECOssistema</h3>
+
+    <div class="eco-papeis">
+      <!-- Ciclo das Estações -->
+      <div class="eco-papel-card eco-papel-card--ciclo">
+        <div class="eco-papel-card__header">
+          <span class="eco-papel-card__icon" aria-hidden="true">&#127807;</span>
+          <h4 class="eco-papel-card__title">Ciclo das Estações</h4>
+        </div>
+        <p class="body-text" style="color: rgba(245, 240, 232, 0.6); font-size: clamp(0.7rem, 1.8vw, 0.8rem); margin-bottom: 0.75rem;">Cuidar de Quem Cuida</p>
+
+        <div class="eco-papel-card__section">
+          <div class="eco-papel-card__label">Por que Jivan</div>
+          <ul class="eco-papel-card__bullets">
+            <li>13+ anos cuidando de pessoas em seus momentos mais vulneráveis</li>
+            <li>Neurociência + terapia corporal = compreensão profunda de burnout e regeneração</li>
+            <li>Os 5 pilares (escuta, empatia, comunicação, conexão, confiança) é o que cuidadores precisam receber</li>
+            <li>Experiência em formação de coaches &rarr; sabe criar multiplicadores de cuidado</li>
+            <li>"O Caminho do Amor" já era, na essência, um programa de cuidar de quem cuida</li>
+          </ul>
+        </div>
+
+        <div class="eco-papel-card__section">
+          <div class="eco-papel-card__label">Função</div>
+          <p class="eco-papel-card__funcao">
+            Arquitetar ciclos de regeneração e nutrição para os cuidadores do ecossistema — os terapeutas, facilitadores, líderes comunitários que sustentam tudo. Garantir que o sistema não consuma quem o mantém vivo.
+          </p>
+        </div>
+      </div>
+
+      <!-- Hospedarias Biofílicas Ravi -->
+      <div class="eco-papel-card eco-papel-card--ravi">
+        <div class="eco-papel-card__header">
+          <span class="eco-papel-card__icon" aria-hidden="true">&#9728;&#65039;</span>
+          <h4 class="eco-papel-card__title">Hospedarias Biofílicas Ravi</h4>
+        </div>
+        <p class="body-text" style="color: rgba(245, 240, 232, 0.6); font-size: clamp(0.7rem, 1.8vw, 0.8rem); margin-bottom: 0.75rem;">Ravi Experience</p>
+
+        <div class="eco-papel-card__section">
+          <div class="eco-papel-card__label">Por que Jivan</div>
+          <ul class="eco-papel-card__bullets">
+            <li>Gestão hoteleira 5 estrelas &rarr; sabe operar hospitalidade de excelência</li>
+            <li>60+ imersões em espaços como Monte Crista (Garuva/SC) — intersecção natureza + transformação + hospedagem</li>
+            <li>Magnetismo Tântrico &rarr; entende design de ambientes que alteram estados</li>
+            <li>Instituto JP &rarr; já treina equipes corporativas em gestão emocional</li>
+            <li>18+ países &rarr; visão global de padrões de hospitalidade e bem-estar</li>
+          </ul>
+        </div>
+
+        <div class="eco-papel-card__section">
+          <div class="eco-papel-card__label">Função</div>
+          <p class="eco-papel-card__funcao">
+            Diretor de Experiência das Hospedarias Biofílicas Ravi. Conceber, implementar e garantir que cada hospedaria seja um organismo vivo de cuidado — onde a natureza, o serviço, o ambiente e as relações humanas operam como uma sinfonia integrada.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Triângulo Estratégico -->
+    <h3 class="subtitulo" style="color: var(--gold-sacred); margin: 1.5rem 0 1rem;">Triângulo Estratégico</h3>
+    <div class="triangulo-estrategico">
+      <div class="triangulo-card">
+        <div class="triangulo-card__icon" aria-hidden="true">&#10024;</div>
+        <h4 class="triangulo-card__nome">Cosmos</h4>
+        <p class="triangulo-card__desc">Inteligência relacional profunda — a leitura do que não se diz</p>
+      </div>
+      <div class="triangulo-card">
+        <div class="triangulo-card__icon" aria-hidden="true">&#128293;</div>
+        <h4 class="triangulo-card__nome">Calor</h4>
+        <p class="triangulo-card__desc">Hospitalidade como arte — do hotel 5 estrelas à hospedaria biofílica</p>
+      </div>
+      <div class="triangulo-card">
+        <div class="triangulo-card__icon" aria-hidden="true">&#127795;</div>
+        <h4 class="triangulo-card__nome">Natureza</h4>
+        <p class="triangulo-card__desc">Cuidado regenerativo — ciclos que nutrem quem sustenta o ecossistema</p>
+      </div>
+    </div>
+
+    <blockquote class="citacao-final">
+      O tantra não morre — ele se expande em hospitalidade viva. A experiência hoteleira 5 estrelas finalmente encontra seu propósito. De entertainer a líder estratégico.
+    </blockquote>
+
+    <footer class="secao-footer">
+      <span class="owl-mini"></span>
+      <span class="page-num">p.8/37</span>
+    </footer>
+  </section>
+
+  <!-- ==========================================
+       9. GENIUS ZONE DASHBOARD
+       ========================================== -->
+  <section class="secao secao-genius-zone">
+    <h2 class="titulo-secao">Genius Zone Dashboard</h2>
+    <span class="gz-badge">Projeção — será atualizado com dados reais</span>
+
+    <div class="gz-grid">
+
+      <!-- Gay Hendricks -->
+      <div class="gz-card" data-slot="slot-gz-zones">
+        <div class="gz-card__header">
+          <span class="gz-card__framework">Gay Hendricks</span>
+          <span class="gz-card__tag">Zonas de Operação</span>
+        </div>
+        <div class="donut-chart" role="img" aria-label="Genialidade 45%, Excelência 35%, Competência 15%, Incompetência 5%"></div>
+        <div class="donut-legend">
+          <span class="donut-legend__item">
+            <span class="donut-legend__dot" style="background: var(--gold-sacred);"></span>
+            Genialidade 45%
+          </span>
+          <span class="donut-legend__item">
+            <span class="donut-legend__dot" style="background: var(--amber-fire);"></span>
+            Excelência 35%
+          </span>
+          <span class="donut-legend__item">
+            <span class="donut-legend__dot" style="background: rgba(245, 240, 232, 0.3);"></span>
+            Competência 15%
+          </span>
+          <span class="donut-legend__item">
+            <span class="donut-legend__dot" style="background: rgba(245, 240, 232, 0.1);"></span>
+            Incompetência 5%
+          </span>
+        </div>
+      </div>
+
+      <!-- CliftonStrengths -->
+      <div class="gz-card" data-slot="slot-gz-clifton">
+        <div class="gz-card__header">
+          <span class="gz-card__framework">CliftonStrengths</span>
+          <span class="gz-card__tag">Top 5 Projetados</span>
+        </div>
+        <div class="bar-chart">
+          <div class="bar-item">
+            <div class="bar-item__header">
+              <span class="bar-item__label">Conexão (Connectedness)</span>
+              <span class="bar-item__value">9/10</span>
+            </div>
+            <div class="bar-item__track">
+              <div class="bar-item__fill bar-item__fill--purple" style="width: 90%;"></div>
+            </div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-item__header">
+              <span class="bar-item__label">Empatia (Empathy)</span>
+              <span class="bar-item__value">9/10</span>
+            </div>
+            <div class="bar-item__track">
+              <div class="bar-item__fill bar-item__fill--purple" style="width: 90%;"></div>
+            </div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-item__header">
+              <span class="bar-item__label">Ativação (Activator)</span>
+              <span class="bar-item__value">8/10</span>
+            </div>
+            <div class="bar-item__track">
+              <div class="bar-item__fill bar-item__fill--gold" style="width: 80%;"></div>
+            </div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-item__header">
+              <span class="bar-item__label">Comando (Command)</span>
+              <span class="bar-item__value">8/10</span>
+            </div>
+            <div class="bar-item__track">
+              <div class="bar-item__fill bar-item__fill--gold" style="width: 80%;"></div>
+            </div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-item__header">
+              <span class="bar-item__label">Individualização (Individualization)</span>
+              <span class="bar-item__value">8/10</span>
+            </div>
+            <div class="bar-item__track">
+              <div class="bar-item__fill bar-item__fill--gold" style="width: 80%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kolbe A -->
+      <div class="gz-card" data-slot="slot-gz-kolbe">
+        <div class="gz-card__header">
+          <span class="gz-card__framework">Kolbe A</span>
+          <span class="gz-card__tag">Instintos Conativos</span>
+        </div>
+        <div class="bar-chart">
+          <div class="bar-item">
+            <div class="bar-item__header">
+              <span class="bar-item__label">Investigador (Fact Finder)</span>
+              <span class="bar-item__value">6/10</span>
+            </div>
+            <div class="bar-item__track">
+              <div class="bar-item__fill bar-item__fill--teal" style="width: 60%;"></div>
+            </div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-item__header">
+              <span class="bar-item__label">Seguimento (Follow Thru)</span>
+              <span class="bar-item__value">5/10</span>
+            </div>
+            <div class="bar-item__track">
+              <div class="bar-item__fill bar-item__fill--teal" style="width: 50%;"></div>
+            </div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-item__header">
+              <span class="bar-item__label">Início Rápido (Quick Start)</span>
+              <span class="bar-item__value">9/10</span>
+            </div>
+            <div class="bar-item__track">
+              <div class="bar-item__fill bar-item__fill--teal" style="width: 90%;"></div>
+            </div>
+          </div>
+          <div class="bar-item">
+            <div class="bar-item__header">
+              <span class="bar-item__label">Implementador (Implementor)</span>
+              <span class="bar-item__value">7/10</span>
+            </div>
+            <div class="bar-item__track">
+              <div class="bar-item__fill bar-item__fill--teal" style="width: 70%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Equação Hormozi -->
+      <div class="gz-card" data-slot="slot-gz-hormozi">
+        <div class="gz-card__header">
+          <span class="gz-card__framework">Equação de Valor</span>
+          <span class="gz-card__tag">Hormozi</span>
+        </div>
+        <div class="hormozi-grid">
+          <div class="hormozi-metric">
+            <div class="hormozi-metric__score">9<span class="hormozi-metric__max">/10</span></div>
+            <div class="hormozi-metric__label">Resultado</div>
+            <div class="hormozi-metric__nota">Transformação profunda de relações humanas</div>
+          </div>
+          <div class="hormozi-metric">
+            <div class="hormozi-metric__score">7<span class="hormozi-metric__max">/10</span></div>
+            <div class="hormozi-metric__label">Probabilidade</div>
+            <div class="hormozi-metric__nota">Track record real, difícil de medir objetivamente</div>
+          </div>
+          <div class="hormozi-metric">
+            <div class="hormozi-metric__score">6<span class="hormozi-metric__max">/10</span></div>
+            <div class="hormozi-metric__label">Tempo</div>
+            <div class="hormozi-metric__nota">Imersões geram resultado rápido; mudança profunda leva tempo</div>
+          </div>
+          <div class="hormozi-metric">
+            <div class="hormozi-metric__score">5<span class="hormozi-metric__max">/10</span></div>
+            <div class="hormozi-metric__label">Esforço</div>
+            <div class="hormozi-metric__nota">Requer presença e vulnerabilidade do participante</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wealth Dynamics -->
+      <div class="gz-card" data-slot="slot-gz-wealth">
+        <div class="gz-card__header">
+          <span class="gz-card__framework">Wealth Dynamics</span>
+          <span class="gz-card__tag">Perfil</span>
+        </div>
+        <div style="margin-top: 0.5rem;">
+          <div class="gz-profile-badge">Star / Supporter Híbrido</div>
+          <p class="gz-profile-desc">
+            Brilha no palco (Star) mas seu verdadeiro poder é elevar os outros (Supporter). A transição para o papel de liderança no Ciclo das Estações amplifica o lado Supporter.
+          </p>
+        </div>
+      </div>
+
+      <!-- Fascination Advantage -->
+      <div class="gz-card" data-slot="slot-gz-fascination">
+        <div class="gz-card__header">
+          <span class="gz-card__framework">Fascination Advantage</span>
+          <span class="gz-card__tag">Arquétipo</span>
+        </div>
+        <div style="margin-top: 0.5rem;">
+          <div class="gz-profile-badge">Passion + Power</div>
+          <p class="gz-profile-desc">
+            Lidera pela intensidade emocional e pela presença de comando. As pessoas não seguem Jivan por lógica, seguem pelo que sentem quando estão perto dele.
+          </p>
+        </div>
+      </div>
+
+      <!-- Habilidade Única (Dan Sullivan) -->
+      <div class="gz-card" data-slot="slot-gz-unique" style="grid-column: 1 / -1;">
+        <div class="gz-card__header">
+          <span class="gz-card__framework">Habilidade Única</span>
+          <span class="gz-card__tag">Dan Sullivan</span>
+        </div>
+        <div class="circular-bars">
+          <div class="circular-bar">
+            <svg class="circular-bar__svg" viewBox="0 0 120 120">
+              <circle class="circular-bar__bg" cx="60" cy="60" r="50"></circle>
+              <circle class="circular-bar__fill" cx="60" cy="60" r="50" stroke="var(--gold-sacred)" stroke-dasharray="314.16" stroke-dashoffset="62.83"></circle>
+            </svg>
+            <span class="circular-bar__percent">80%</span>
+            <span class="circular-bar__label">Alinhamento</span>
+          </div>
+          <div class="circular-bar">
+            <svg class="circular-bar__svg" viewBox="0 0 120 120">
+              <circle class="circular-bar__bg" cx="60" cy="60" r="50"></circle>
+              <circle class="circular-bar__fill" cx="60" cy="60" r="50" stroke="var(--amber-fire)" stroke-dasharray="314.16" stroke-dashoffset="109.96"></circle>
+            </svg>
+            <span class="circular-bar__percent">65%</span>
+            <span class="circular-bar__label">Tempo na Zona</span>
+          </div>
+          <div class="circular-bar">
+            <svg class="circular-bar__svg" viewBox="0 0 120 120">
+              <circle class="circular-bar__bg" cx="60" cy="60" r="50"></circle>
+              <circle class="circular-bar__fill" cx="60" cy="60" r="50" stroke="var(--teal-border)" stroke-dasharray="314.16" stroke-dashoffset="15.71"></circle>
+            </svg>
+            <span class="circular-bar__percent">95%</span>
+            <span class="circular-bar__label">Potencial</span>
+          </div>
+        </div>
+        <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.35rem;">
+          <p style="font-size: clamp(0.7rem, 1.8vw, 0.8rem); color: rgba(245, 240, 232, 0.6);"><strong style="color: var(--gold-sacred);">Alinhamento 80%</strong> — Alto quando em facilitação; menor em tarefas administrativas</p>
+          <p style="font-size: clamp(0.7rem, 1.8vw, 0.8rem); color: rgba(245, 240, 232, 0.6);"><strong style="color: var(--amber-fire);">Tempo na Zona 65%</strong> — Muito tempo em conteúdo digital, nem sempre na zona de genialidade</p>
+          <p style="font-size: clamp(0.7rem, 1.8vw, 0.8rem); color: rgba(245, 240, 232, 0.6);"><strong style="color: var(--teal-border);">Potencial 95%</strong> — Com o reposicionamento no ecossistema, o potencial de atuação na zona de genialidade sobe dramaticamente</p>
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="secao-footer">
+      <span class="owl-mini"></span>
+      <span class="page-num">p.9/37</span>
+    </footer>
+  </section>
+
+  <!-- ==========================================
+       10. PLANO DE AÇÃO + SQUAD
+       ========================================== -->
+  <section class="secao secao-plano-acao">
+    <h2 class="titulo-secao">Plano de Ação</h2>
+
+    <div class="plano-timeline">
+      <!-- Período 1 -->
+      <div class="plano-periodo">
+        <div class="plano-periodo__label">Fase 1 — Meses 1-3</div>
+        <h3 class="plano-periodo__titulo">Fundação e Alinhamento</h3>
+        <ul class="plano-checklist">
+          <li>Definir posicionamento oficial: Estrategista de Relações Humanas</li>
+          <li>Aplicar assessments psicométricos reais (CliftonStrengths, Kolbe A)</li>
+          <li>Mapear stakeholders e equipe do Ciclo das Estações</li>
+          <li>Desenhar primeira versão do programa de cuidado para cuidadores</li>
+          <li>Alinhar narrativa de transição nas redes sociais</li>
+        </ul>
+      </div>
+
+      <!-- Período 2 -->
+      <div class="plano-periodo">
+        <div class="plano-periodo__label">Fase 2 — Meses 4-6</div>
+        <h3 class="plano-periodo__titulo">Implementação Piloto</h3>
+        <ul class="plano-checklist">
+          <li>Lançar primeiro ciclo piloto do programa de regeneração</li>
+          <li>Iniciar projeto de uma hospedaria biofílica (design de experiência)</li>
+          <li>Produzir conteúdo alinhado ao novo posicionamento</li>
+          <li>Formar primeira turma de multiplicadores de cuidado</li>
+          <li>Integrar plataformas digitais com a Base Tríade</li>
+        </ul>
+      </div>
+
+      <!-- Período 3 -->
+      <div class="plano-periodo">
+        <div class="plano-periodo__label">Fase 3 — Meses 7-12</div>
+        <h3 class="plano-periodo__titulo">Escala e Consolidação</h3>
+        <ul class="plano-checklist">
+          <li>Consolidar o Ciclo das Estações como programa recorrente</li>
+          <li>Abrir primeira hospedaria biofílica Ravi</li>
+          <li>Expandir equipe de facilitadores formados</li>
+          <li>Criar sistema de métricas de impacto do ecossistema</li>
+          <li>Posicionar Jivan como referência em experiências de cuidado em escala</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Anti-padrões -->
+    <div class="antipadroes">
+      <h3 class="antipadroes__titulo"><span aria-hidden="true">&#9888;</span> Anti-padrões a Evitar</h3>
+      <ul class="antipadroes__list">
+        <li>Retornar ao posicionamento exclusivo de "Coach de Tantra" — o Tantra é raiz, não destino</li>
+        <li>Dispersar energia em múltiplos projetos desconectados do ecossistema</li>
+        <li>Priorizar volume de conteúdo digital sobre profundidade de impacto</li>
+        <li>Negligenciar o autocuidado enquanto cuida dos outros</li>
+        <li>Delegar a experiência do hóspede — este é o DNA diferencial de Jivan</li>
+      </ul>
+    </div>
+
+    <!-- Squad -->
+    <div class="squad-card">
+      <h3 class="squad-card__titulo">Squad Recomendado</h3>
+      <div class="squad-roles">
+        <div class="squad-role">
+          <span class="squad-role__icon" aria-hidden="true">&#127919;</span>
+          <div class="squad-role__info">
+            <div class="squad-role__name">Estrategista de Marca</div>
+            <div class="squad-role__desc">Narrativa de transição e posicionamento público</div>
+          </div>
+        </div>
+        <div class="squad-role">
+          <span class="squad-role__icon" aria-hidden="true">&#128200;</span>
+          <div class="squad-role__info">
+            <div class="squad-role__name">Gestor de Operações</div>
+            <div class="squad-role__desc">Processos do Ciclo das Estações e hospedarias</div>
+          </div>
+        </div>
+        <div class="squad-role">
+          <span class="squad-role__icon" aria-hidden="true">&#127912;</span>
+          <div class="squad-role__info">
+            <div class="squad-role__name">Designer de Experiência</div>
+            <div class="squad-role__desc">UX das hospedarias biofílicas e jornada do cuidador</div>
+          </div>
+        </div>
+        <div class="squad-role">
+          <span class="squad-role__icon" aria-hidden="true">&#128187;</span>
+          <div class="squad-role__info">
+            <div class="squad-role__name">Produtor de Conteúdo</div>
+            <div class="squad-role__desc">Migração narrativa nas plataformas digitais</div>
+          </div>
+        </div>
+        <div class="squad-role">
+          <span class="squad-role__icon" aria-hidden="true">&#129504;</span>
+          <div class="squad-role__info">
+            <div class="squad-role__name">Facilitador Sênior</div>
+            <div class="squad-role__desc">Co-facilitação e formação de novos facilitadores</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="secao-footer">
+      <span class="owl-mini"></span>
+      <span class="page-num">p.10/37</span>
+    </footer>
+  </section>
+
+  <!-- ==========================================
+       11. CONTRACAPA + LINKS
+       ========================================== -->
+  <section class="secao secao-contracapa">
+    <div class="contracapa-content">
+      <div class="qr-placeholder">
+        <span class="qr-placeholder__icon" aria-hidden="true">&#9641;</span>
+        <span class="qr-placeholder__label">QR @iai.get137</span>
+      </div>
+
+      <div class="contracapa-links">
+        <a href="https://www.basetriade.com" target="_blank" rel="noopener" class="contracapa-link contracapa-link--portal">
+          &#127760; www.basetriade.com <span class="label-text" style="opacity: 0.5; margin-left: 0.5rem;">Portal</span>
+        </a>
+        <a href="https://basetriade.ecoin.com.br" target="_blank" rel="noopener" class="contracapa-link contracapa-link--ecoin">
+          &#9775; basetriade.ecoin.com.br <span class="label-text" style="opacity: 0.5; margin-left: 0.5rem;">Plataforma ECOin</span>
+        </a>
+        <a href="https://instagram.com/basetriade" target="_blank" rel="noopener" class="contracapa-link contracapa-link--instagram">
+          &#128247; @basetriade <span class="label-text" style="opacity: 0.5; margin-left: 0.5rem;">Instagram</span>
+        </a>
+        <a href="https://instagram.com/iai.get137" target="_blank" rel="noopener" class="contracapa-link contracapa-link--iai">
+          &#129417; @iai.get137 <span class="label-text" style="opacity: 0.5; margin-left: 0.5rem;">iAi Intelligence</span>
+        </a>
+        <a href="https://wa.me/5521999993413" target="_blank" rel="noopener" class="contracapa-link contracapa-link--whatsapp">
+          &#128172; +55 21 999 993 413 <span class="label-text" style="opacity: 0.5; margin-left: 0.5rem;">WhatsApp</span>
+        </a>
+      </div>
+
+      <div class="gold-line" style="margin: 1rem 0;"></div>
+
+      <p class="contracapa-versao">iAi.ECOssistema Base Tríade | v1.37</p>
+
+      <p class="frase-orion">
+        "Quando olhares para as estrelas, lembra que cada uma delas já foi um caos que encontrou sua própria ordem."
+      </p>
+
+      <span class="mark-137">.137</span>
+    </div>
+
+    <footer class="secao-footer">
+      <span class="owl-mini"></span>
+      <span class="page-num">p.11/37</span>
+    </footer>
+  </section>
+
+</article>
+
+</body>
+</html>

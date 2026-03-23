@@ -1,0 +1,109 @@
+{
+  "version": "1.0.0",
+  "totalQuestions": 43,
+  "estimatedMinutes": 30,
+  "anchors": {
+    "intro": "Antes de começarmos o assessment, quero saber: você já tem resultados de outros testes de autoconhecimento? Isso enriquece muito a análise!",
+    "known": [
+      { "id": "eneagrama", "label": "Eneagrama", "question": "Qual seu tipo no Eneagrama?", "placeholder": "Ex: Tipo 3 — Realizador", "skip": "Pular" },
+      { "id": "disc", "label": "DISC", "question": "Qual seu perfil DISC?", "placeholder": "Ex: DI, DC, IS...", "skip": "Pular" },
+      { "id": "mbti", "label": "MBTI", "question": "Qual seu tipo MBTI?", "placeholder": "Ex: ENTP, INFJ...", "skip": "Pular" },
+      { "id": "numerologia", "label": "Numerologia", "question": "Qual seu número na Numerologia?", "placeholder": "Ex: 8 (Poder, Abundância)", "skip": "Pular" },
+      { "id": "signo", "label": "Signo", "question": "Qual seu signo?", "placeholder": "Ex: Touro, Leão...", "skip": "Pular" },
+      { "id": "human_design", "label": "Human Design", "question": "Qual seu tipo no Human Design?", "placeholder": "Ex: Manifestor 4/6", "skip": "Pular" },
+      { "id": "inteligencias", "label": "Inteligências Múltiplas", "question": "Quais suas inteligências dominantes?", "placeholder": "Ex: Lógica, Existencialista", "skip": "Pular" },
+      { "id": "tracos_carater", "label": "Traços de Caráter", "question": "Quais seus traços de caráter predominantes?", "placeholder": "Ex: Esquizoide + Rígido", "skip": "Pular" },
+      { "id": "missao_vida", "label": "Missão de Vida", "question": "Qual sua missão de vida (se já mapeou)?", "placeholder": "Ex: Liderança, Cura, Ensino...", "skip": "Pular" }
+    ],
+    "openField": {
+      "question": "Tem mais alguma coisa sobre você que acha relevante? Outros testes, avaliações, terapias, descobertas pessoais... pode colar resultados ou simplesmente contar.",
+      "maxChars": 5000,
+      "skip": "Pular"
+    }
+  },
+  "sections": [
+    {
+      "id": "contexto",
+      "title": "Contexto Pessoal",
+      "duration": "5 min",
+      "intro": "Vamos começar com algumas perguntas sobre você e seu contexto profissional.",
+      "questions": [
+        { "id": "ctx_nome", "text": "Qual seu nome completo?", "type": "open", "required": true },
+        { "id": "ctx_area", "text": "Qual sua área de atuação principal?", "type": "choice", "options": ["Tecnologia / Desenvolvimento", "Marketing / Vendas", "Design / Criação", "Gestão / Liderança", "Educação / Treinamento", "Saúde / Bem-estar", "Finanças / Investimentos", "Consultoria / Serviços Profissionais", "Outro (especificar)"] },
+        { "id": "ctx_experiencia", "text": "Há quanto tempo você trabalha na sua área principal?", "type": "choice", "options": ["Menos de 1 ano", "1 a 3 anos", "3 a 5 anos", "5 a 10 anos", "Mais de 10 anos"] },
+        { "id": "ctx_oque_faz", "text": "Descreva em 2-3 frases: o que você faz no seu dia a dia profissional?", "type": "open", "hint": "Exemplo: 'Sou gestor de projetos em uma startup de tecnologia. Coordeno equipes e faço ponte entre produto e engenharia.'" },
+        { "id": "ctx_sem_dinheiro", "text": "Se dinheiro NÃO fosse problema, o que você faria da vida?", "type": "open", "hint": "Não existe resposta errada. Pode ser algo totalmente diferente do que faz hoje." },
+        { "id": "ctx_intro_extro", "text": "Você se considera mais...", "type": "choice", "options": ["Introvertido — prefiro trabalhar sozinho, recarrego energia em silêncio", "Mais introvertido que extrovertido", "Equilibrado — depende da situação", "Mais extrovertido que introvertido", "Extrovertido — recarrego energia com pessoas"] },
+        { "id": "ctx_analitico_intuitivo", "text": "Na hora de tomar decisões, você é mais...", "type": "choice", "options": ["Analítico — preciso de dados e pesquisa antes de decidir", "Mais analítico que intuitivo", "Equilibrado — uso dados E intuição igualmente", "Mais intuitivo que analítico", "Intuitivo — decido rápido pelo instinto"] },
+        { "id": "ctx_estrutura_flex", "text": "Você prefere...", "type": "choice", "options": ["Estrutura total — cronogramas, checklists, processos definidos", "Mais estrutura — flexibilidade dentro de um framework", "Depende do projeto", "Mais flexibilidade — estrutura demais me sufoca", "Flexibilidade total — improviso e adapto conforme necessário"] }
+      ]
+    },
+    {
+      "id": "energia",
+      "title": "Atividades e Energia",
+      "duration": "8 min",
+      "intro": "Agora vamos explorar o que te dá energia e o que te drena. Isso é fundamental para mapear sua Zona de Genialidade.",
+      "questions": [
+        { "id": "energy_drena", "text": "Quais atividades DRENAM sua energia, mesmo que você saiba fazê-las? (pode escolher várias)", "type": "multi", "options": ["Tarefas administrativas e burocráticas", "Reuniões longas sem pauta definida", "Trabalho repetitivo e operacional", "Negociação e confronto direto", "Análise detalhada de números e planilhas", "Atendimento ao cliente / suporte", "Vender e prospectar clientes", "Gerenciar pessoas e dar feedback", "Escrever textos longos e documentação", "Programar / trabalho técnico detalhado"] },
+        { "id": "energy_carrega", "text": "Quais atividades te ENERGIZAM — você termina com mais energia do que começou? (pode escolher várias)", "type": "multi", "options": ["Resolver problemas complexos", "Ensinar e mentorar pessoas", "Criar coisas novas (produtos, conteúdo, arte)", "Liderar e inspirar equipes", "Analisar dados e encontrar padrões", "Conectar pessoas e fazer networking", "Planejar estratégias e visão de longo prazo", "Executar e entregar resultados concretos", "Negociar e fechar acordos", "Automatizar e otimizar processos"] },
+        { "id": "energy_agradecem", "text": "Quando outras pessoas te agradecem ou elogiam, geralmente é por...", "type": "choice", "options": ["Resolver um problema que ninguém mais conseguia", "Explicar algo complexo de forma simples", "Conectar as pessoas certas entre si", "Trazer energia e motivação para o grupo", "Organizar o caos e criar ordem", "Ter ideias criativas e inovadoras", "Entregar resultados rápidos e confiáveis", "Ouvir com atenção e dar conselhos certeiros"] },
+        { "id": "energy_flow", "text": "Em qual tipo de atividade você PERDE A NOÇÃO DO TEMPO (estado de flow)?", "type": "choice", "options": ["Escrevendo, criando conteúdo ou arte", "Programando, construindo sistemas ou produtos", "Conversando, ensinando ou fazendo mentoria", "Planejando, desenhando estratégias", "Pesquisando, aprendendo coisas novas", "Liderando reuniões, facilitando discussões", "Negociando, vendendo, convencendo", "Organizando, sistematizando, criando processos"] },
+        { "id": "energy_inicio", "text": "Quando começa um projeto novo, sua primeira reação natural é...", "type": "choice", "options": ["Pesquisar bastante antes de dar o primeiro passo", "Fazer um plano detalhado com etapas claras", "Começar a executar logo e ajustar no caminho", "Conversar com outras pessoas para pegar opiniões"] },
+        { "id": "energy_problemas", "text": "Quando surge um problema inesperado no trabalho, você tende a...", "type": "choice", "options": ["Parar e analisar todas as opções antes de agir", "Agir rápido com a melhor opção disponível no momento", "Consultar alguém de confiança antes de decidir", "Criar um sistema ou processo para que o problema não se repita"] },
+        { "id": "energy_manual_conceitual", "text": "Você prefere trabalhar com...", "type": "choice", "options": ["Coisas tangíveis — protótipos, ferramentas, construir fisicamente", "Mais tangível — gosto de ver resultados concretos", "Tanto faz — depende do projeto", "Mais abstrato — prefiro conceitos, estratégias, ideias", "Coisas abstratas — modelos mentais, frameworks, teorias"] },
+        { "id": "energy_detalhe", "text": "Quando precisa entregar um trabalho, você...", "type": "choice", "options": ["É extremamente detalhista — revisa várias vezes", "Cuida dos detalhes importantes mas não se perde nos pequenos", "Foca no resultado geral — detalhes podem ser ajustados depois", "Entrega rápido e itera — perfeição é inimiga do progresso"] },
+        { "id": "energy_delegacao", "text": "Sobre delegar tarefas, você...", "type": "choice", "options": ["Tenho muita dificuldade — prefiro fazer eu mesmo", "Delego mas fico monitorando de perto", "Delego com instruções claras e confio no resultado", "Adoro delegar — prefiro focar no que só eu sei fazer"] },
+        { "id": "energy_ritmo", "text": "Seu ritmo natural de trabalho é...", "type": "choice", "options": ["Explosões intensas seguidas de descanso (sprint/recovery)", "Ritmo constante e previsível ao longo do dia", "Começo devagar e vou acelerando até o deadline", "Alta energia de manhã, desacelero à tarde"] },
+        { "id": "energy_inovacao_otimizacao", "text": "O que te dá mais satisfação?", "type": "choice", "options": ["Criar algo do ZERO que nunca existiu", "Melhorar algo existente e tornar excelente", "Escalar algo que já funciona para mais pessoas", "Conectar coisas existentes de formas novas"] },
+        { "id": "energy_multitask", "text": "Você funciona melhor...", "type": "choice", "options": ["Fazendo uma coisa só com foco total por longos períodos", "Alternando entre 2-3 projetos no mesmo dia", "Gerenciando muitas coisas ao mesmo tempo", "Depende — foco profundo para criar, multitask para executar"] }
+      ]
+    },
+    {
+      "id": "talentos",
+      "title": "Talentos e Padrões",
+      "duration": "7 min",
+      "intro": "Vamos identificar seus padrões naturais de talento — aquilo que você faz bem quase sem esforço.",
+      "questions": [
+        { "id": "talent_padrao", "text": "Pense nos seus 3 maiores sucessos profissionais. O que eles têm em COMUM?", "type": "choice", "options": ["Em todos eu estava liderando e influenciando pessoas", "Em todos eu estava criando algo novo e inovador", "Em todos eu estava organizando e executando com disciplina", "Em todos eu estava analisando e resolvendo problemas complexos", "Em todos eu estava ensinando e desenvolvendo outros", "Em todos eu estava conectando pessoas e construindo relacionamentos", "Em todos eu estava vendendo e convencendo stakeholders", "Em todos eu estava planejando estratégia de longo prazo"] },
+        { "id": "talent_descricao", "text": "Se eu perguntasse a 5 pessoas próximas 'qual a principal qualidade dessa pessoa?', a maioria diria...", "type": "choice", "options": ["Confiável e consistente — sempre entrega o que promete", "Criativo e visionário — sempre tem ideias incríveis", "Carismático e inspirador — todo mundo quer estar perto", "Analítico e profundo — enxerga o que ninguém vê", "Prático e resolutivo — resolve qualquer pepino", "Cuidadoso e atencioso — se preocupa genuinamente com as pessoas", "Corajoso e ousado — não tem medo de arriscar"] },
+        { "id": "talent_natural", "text": "O que você faz com FACILIDADE que outras pessoas acham difícil?", "type": "choice", "options": ["Falar em público e apresentar ideias", "Escrever textos claros e persuasivos", "Organizar informações complexas em estruturas simples", "Aprender coisas novas rapidamente", "Ler pessoas e entender motivações", "Enxergar tendências e oportunidades antes dos outros", "Manter a calma sob pressão", "Transformar ideias abstratas em planos concretos"] },
+        { "id": "talent_dominio", "text": "Em um time, você naturalmente assume o papel de...", "type": "choice", "options": ["EXECUTOR — garanto que as coisas aconteçam e sejam entregues", "INFLUENCIADOR — convenço, vendo, inspiro os outros a agir", "CONSTRUTOR DE RELACIONAMENTOS — crio harmonia e conecto pessoas", "PENSADOR ESTRATÉGICO — trago visão de futuro e análise profunda"] },
+        { "id": "talent_frustracao", "text": "O que te FRUSTRA repetidamente no trabalho?", "type": "choice", "options": ["Pessoas que não cumprem prazos e compromissos", "Falta de visão estratégica nas decisões", "Processos lentos e burocráticos", "Falta de criatividade e inovação no time", "Pessoas que não se desenvolvem e ficam estagnadas", "Conflitos interpessoais mal resolvidos", "Falta de dados e métricas para decisões", "Microgerenciamento e falta de autonomia"] },
+        { "id": "talent_comunicacao", "text": "Seu estilo natural de comunicação é...", "type": "choice", "options": ["Direto e objetivo — vou ao ponto sem rodeios", "Detalhado e preciso — apresento todos os dados e evidências", "Inspirador e entusiasmado — uso histórias e emoção", "Diplomático e cuidadoso — considero todos os lados"] },
+        { "id": "talent_aprendizado", "text": "Quando quer aprender algo novo, você...", "type": "choice", "options": ["Lê tudo sobre o assunto antes de começar", "Procura um mentor ou especialista para aprender direto", "Começa a praticar e aprende fazendo, errando e ajustando", "Assiste vídeos e tutoriais, depois tenta replicar"] },
+        { "id": "talent_feedback", "text": "Quando recebe um feedback crítico (negativo), você...", "type": "choice", "options": ["Analisa friamente e extrai o que é útil", "Fica incomodado mas usa como combustível para melhorar", "Precisa de um tempo para processar antes de reagir", "Questiona e desafia se o feedback faz sentido"] },
+        { "id": "talent_contribuicao", "text": "Se você pudesse contribuir com UMA COISA para o mundo, seria...", "type": "choice", "options": ["Ensinar e capacitar pessoas a se desenvolverem", "Criar produtos ou soluções que resolvam problemas reais", "Inspirar e liderar movimentos de transformação", "Organizar sistemas que funcionem de forma eficiente", "Conectar pessoas e criar comunidades fortes", "Descobrir verdades e compartilhar conhecimento profundo", "Gerar riqueza e oportunidades econômicas para outros"] },
+        { "id": "talent_competencia_genialidade", "text": "Tem algo que você faz BEM (outros até elogiam) mas que na verdade você NÃO gosta de fazer?", "type": "open", "hint": "Isso é CRÍTICO — separa sua Zona de Excelência da Zona de Genialidade. Exemplo: 'Sou bom em gestão de projetos mas na verdade detesto. Preferia estar criando.'" }
+      ]
+    },
+    {
+      "id": "negocios",
+      "title": "Estilo de Negócios",
+      "duration": "5 min",
+      "intro": "Agora vamos entender como você gera valor e como prefere monetizar seus talentos.",
+      "questions": [
+        { "id": "biz_como_ganha", "text": "Qual modelo de trabalho/negócio te atrai MAIS?", "type": "choice", "options": ["Criar produtos digitais (cursos, apps, ferramentas) e vender em escala", "Prestar serviços de alto valor (consultoria, mentoria, done-for-you)", "Construir e gerenciar equipes que entregam resultados", "Fazer parcerias e conectar oportunidades (deals, joint ventures)", "Investir e multiplicar recursos existentes", "Automatizar sistemas que geram receita recorrente"] },
+        { "id": "biz_risco", "text": "Sobre risco financeiro, você...", "type": "choice", "options": ["Evito ao máximo — preciso de previsibilidade e segurança", "Aceito riscos calculados com rede de proteção", "Tomo riscos moderados se o potencial de retorno justifica", "Amo risco — alto risco, alto retorno é meu mantra"] },
+        { "id": "biz_solo_time", "text": "Você funciona melhor...", "type": "choice", "options": ["Totalmente sozinho — sou mais produtivo sem ninguém por perto", "Sozinho com suporte — um assistente para operacional", "Em dupla — eu e um sócio complementar", "Liderando um time pequeno (3-5 pessoas)", "Liderando uma organização maior (10+ pessoas)"] },
+        { "id": "biz_timing", "text": "Você prefere...", "type": "choice", "options": ["Ser o PRIMEIRO em algo novo (inovar, criar mercado)", "Entrar cedo mas com algo já validado (fast follower)", "Entrar quando o mercado já é grande e otimizar", "Entrar no final e consolidar (comprar, fusionar, escalar o que existe)"] },
+        { "id": "biz_receita", "text": "Se pudesse escolher UMA fonte principal de receita, seria...", "type": "choice", "options": ["Vender conhecimento (cursos, livros, palestras, mentoria)", "Vender serviços especializados (consultoria, agência, freelance)", "Vender produtos (SaaS, apps, e-commerce)", "Vender oportunidades (intermediação, afiliados, parcerias, investimentos)"] },
+        { "id": "biz_preco", "text": "Qual sua relação com cobrar caro pelo seu trabalho?", "type": "choice", "options": ["Tenho dificuldade — sempre acho que deveria cobrar menos", "Cobro um preço justo mas sei que poderia cobrar mais", "Cobro bem e me sinto confortável com meu preço", "Cobro premium — meu trabalho vale caro e eu sei disso"] },
+        { "id": "biz_escala", "text": "O que te atrai mais?", "type": "choice", "options": ["Atender POUCOS clientes com MUITA profundidade (high-touch)", "Atender um NÚMERO MÉDIO com boa qualidade (group coaching, turmas)", "Atender MUITAS pessoas com um produto escalável (cursos, SaaS)", "Não atender ninguém diretamente — criar sistemas que funcionam sem mim"] },
+        { "id": "biz_wealth_dynamics", "text": "Qual descrição abaixo mais se parece com você?", "type": "choice", "options": ["CRIADOR — Tenho muitas ideias, começo coisas novas, sou visionário", "ESTRELA — Brilho no palco, inspiro pessoas, sou a marca", "APOIADOR — Sou o braço direito perfeito, executo a visão de outros com excelência", "NEGOCIADOR — Conecto pessoas e oportunidades, faço as coisas acontecerem", "COMERCIANTE — Tenho timing de mercado, compro barato e vendo caro", "ACUMULADOR — Sou paciente, consistente, construo riqueza devagar e com segurança", "SENHOR DOS SISTEMAS — Amo processos, automação, construir máquinas que funcionam sozinhas", "MECÂNICO — Pego coisas que já existem e torno muito melhores"] }
+      ]
+    },
+    {
+      "id": "visao",
+      "title": "Visão e Ambição",
+      "duration": "5 min",
+      "intro": "Última seção! Vamos entender seus objetivos e o que está entre você e o próximo nível.",
+      "questions": [
+        { "id": "vision_90dias", "text": "Qual RESULTADO CONCRETO você quer ter alcançado daqui a 90 dias?", "type": "open", "hint": "Seja específico. Não 'ganhar mais dinheiro' mas 'ter 5 clientes pagando R$2k/mês por consultoria'." },
+        { "id": "vision_receita", "text": "Qual sua meta de receita MENSAL nos próximos 6 meses?", "type": "choice", "options": ["Até R$5.000/mês (estou começando)", "R$5.000 a R$15.000/mês (quero uma renda sólida)", "R$15.000 a R$50.000/mês (quero escalar)", "R$50.000 a R$100.000/mês (crescimento agressivo)", "Mais de R$100.000/mês (estou pensando grande)"] },
+        { "id": "vision_bloqueio", "text": "O que está te TRAVANDO agora? Qual o maior obstáculo entre onde você está e onde quer chegar?", "type": "open", "hint": "Pode ser algo interno (medo, insegurança, falta de clareza) ou externo (falta de dinheiro, de conhecimento técnico, de tempo)." },
+        { "id": "vision_tempo", "text": "Quanto tempo por SEMANA você pode dedicar ao seu projeto/negócio?", "type": "choice", "options": ["Menos de 5 horas/semana", "5 a 10 horas/semana", "10 a 20 horas/semana", "20 a 40 horas/semana", "40+ horas/semana (dedicação total)"] },
+        { "id": "vision_ai", "text": "Qual seu nível de experiência com Inteligência Artificial e automação?", "type": "choice", "options": ["Zero — nunca usei ChatGPT ou ferramentas similares", "Básico — uso ChatGPT para perguntas e textos simples", "Intermediário — uso AI no dia a dia para vários fluxos", "Avançado — crio automações, uso APIs, construo com AI", "Expert — desenvolvo soluções de AI para mim e/ou para clientes"] }
+      ]
+    }
+  ]
+}

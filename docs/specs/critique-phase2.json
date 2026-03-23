@@ -1,0 +1,67 @@
+{
+  "metadata": {
+    "spec_id": "SPEC-GZD-002",
+    "reviewer": "@qa (Quinn)",
+    "date": "2026-03-23",
+    "verdict": "APPROVED",
+    "score": 4.3
+  },
+  "dimensions": {
+    "completude": 4,
+    "clareza": 5,
+    "testabilidade": 4,
+    "seguranca": 4,
+    "rastreabilidade": 5,
+    "viabilidade": 4
+  },
+  "issues": [
+    {
+      "id": "COST-1",
+      "severity": "HIGH",
+      "title": "43 chamadas Haiku não são necessárias — assessment é 100% frontend",
+      "recommendation": "Corrigir: 0 Haiku durante assessment, 1 Sonnet no final. Motor de perguntas é local (JSON → localStorage).",
+      "refs": ["FR-5"]
+    },
+    {
+      "id": "ARCH-1",
+      "severity": "HIGH",
+      "title": "Assessment mode deve ser motor frontend-only, não chat API",
+      "recommendation": "Explicitar que perguntas vêm do JSON local, respostas salvas em localStorage, zero chamadas API durante assessment.",
+      "refs": ["FR-5", "CON-5"]
+    },
+    {
+      "id": "UX-2",
+      "severity": "MEDIUM",
+      "title": "Multiple choice como texto pode ser confuso — considerar botões",
+      "recommendation": "MVP: opções numeradas. Futuro: botões clicáveis no chat.",
+      "refs": ["NFR-4"]
+    },
+    {
+      "id": "SPEC-4",
+      "severity": "MEDIUM",
+      "title": "Falta AC para refazer assessment com profile existente",
+      "recommendation": "Adicionar botão 'Refazer assessment' que limpa localStorage e reabre Aurora em assessment mode.",
+      "refs": ["FR-5"]
+    },
+    {
+      "id": "SPEC-5",
+      "severity": "MEDIUM",
+      "title": "S5 e S6 devem ser merged — âncoras fazem parte do fluxo do assessment",
+      "recommendation": "Uma story para assessment completo (motor + âncoras + campo aberto). S7 separada para geração.",
+      "refs": ["FR-5", "FR-6", "FR-7"]
+    },
+    {
+      "id": "DATA-1",
+      "severity": "LOW",
+      "title": "localStorage cleanup após geração do profile",
+      "recommendation": "Limpar respostas do assessment do localStorage após profile.json gerado com sucesso.",
+      "refs": ["FR-8"]
+    }
+  ],
+  "actions_for_sm": [
+    "Merge S5 + S6 em uma story: Assessment Mode completo (motor frontend + âncoras + campo aberto)",
+    "S7: Compilação + /api/analyze + transição mentora",
+    "Explicitar: assessment é 100% frontend, 0 chamadas Haiku",
+    "Adicionar AC: refazer assessment para cliente com profile existente"
+  ]
+}

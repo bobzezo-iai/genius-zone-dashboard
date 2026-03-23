@@ -1,0 +1,138 @@
+{
+  "metadata": {
+    "id": "SPEC-GZD-002",
+    "title": "Assessment Guiado pela Aurora + Âncoras de Calibração",
+    "author": "@pm (Morgan)",
+    "date": "2026-03-23",
+    "status": "draft",
+    "complexity": "STANDARD",
+    "project": "genius-zone-dashboard",
+    "parent_spec": "SPEC-GZD-001",
+    "phase": 2
+  },
+  "problem_statement": "Hoje o dashboard depende de documentos pré-existentes ou curadoria manual do operador para gerar o profile.json. Clientes novos sem documentos ficam na tela 'perfil em preparação' sem caminho de ação. Precisamos de um fluxo self-service onde a Aurora conduz o assessment e gera o perfil automaticamente.",
+  "business_goals": [
+    "Eliminar o operador como gargalo na geração de perfis",
+    "Oferecer experiência premium conversacional (Aurora como avaliadora → mentora)",
+    "Enriquecer análise com âncoras de calibração opcionais",
+    "Permitir campo aberto para dados complementares não previstos",
+    "Escalar o serviço para dezenas/centenas de clientes"
+  ],
+  "target_users": [
+    {
+      "persona": "Cliente Premium (novo, sem documentos)",
+      "description": "Recebe link /c/{slug}, responde questionário guiado pela Aurora, recebe dashboard completo"
+    },
+    {
+      "persona": "Cliente Premium (com dados existentes)",
+      "description": "Já tem resultados de Eneagrama, DISC, MBTI etc. — fornece âncoras que enriquecem a análise"
+    }
+  ],
+  "functional_requirements": [
+    {
+      "id": "FR-5",
+      "title": "Aurora Assessment Mode",
+      "description": "Aurora detecta que cliente não tem profile.json e entra em modo assessment — conduz 43 perguntas conversacionais das 5 seções",
+      "priority": "MUST",
+      "acceptance_criteria": [
+        "Ao acessar /c/{slug} sem profile.json, Aurora abre automaticamente em modo assessment",
+        "Aurora apresenta boas-vindas personalizada e explica o processo (~30 min)",
+        "Aurora conduz as 43 perguntas das 5 seções sequencialmente",
+        "Perguntas multiple choice apresentadas como opções numeradas",
+        "Perguntas open-ended aceitam texto livre",
+        "Progresso salvo no localStorage a cada seção (recovery de desconexão)",
+        "Aurora permite pausar e retomar depois"
+      ]
+    },
+    {
+      "id": "FR-6",
+      "title": "Âncoras de Calibração",
+      "description": "Antes do questionário principal, Aurora pergunta sobre resultados de testes anteriores para calibrar a análise",
+      "priority": "MUST",
+      "acceptance_criteria": [
+        "Aurora pergunta: 'Você já tem resultados de outros testes de autoconhecimento?'",
+        "Se SIM: apresenta lista de âncoras conhecidas (Eneagrama, DISC, MBTI, Numerologia, Signo, Human Design, etc.)",
+        "Cliente informa apenas as que tem — nenhuma é obrigatória",
+        "Âncoras são salvas junto com respostas do assessment",
+        "Âncoras alimentam o system prompt do /api/analyze para enriquecer a análise"
+      ]
+    },
+    {
+      "id": "FR-7",
+      "title": "Campo Aberto para Dados Complementares",
+      "description": "Após as âncoras conhecidas, Aurora oferece campo aberto para qualquer dado adicional que o cliente queira compartilhar",
+      "priority": "MUST",
+      "acceptance_criteria": [
+        "Aurora pergunta: 'Tem mais alguma coisa sobre você que acha relevante? Outros testes, avaliações, descobertas pessoais...'",
+        "Aceita texto livre sem limite rígido (até 5000 chars)",
+        "Texto salvo como campo 'additional_context' nas respostas",
+        "Incluído no contexto enviado ao /api/analyze"
+      ]
+    },
+    {
+      "id": "FR-8",
+      "title": "Geração Automática de Profile.json",
+      "description": "Após as 43 respostas + âncoras + campo aberto, Aurora envia tudo ao /api/analyze que gera profile.json automaticamente",
+      "priority": "MUST",
+      "acceptance_criteria": [
+        "Aurora compila respostas em texto estruturado",
+        "Envia ao /api/analyze com âncoras e contexto adicional",
+        "profile.json gerado segue schema fill_psychometric_dashboard",
+        "Dashboard renderiza automaticamente após análise",
+        "Aurora muda de modo assessment para modo mentora",
+        "profile.json salvo no localStorage e opcionalmente no Supabase"
+      ]
+    }
+  ],
+  "non_functional_requirements": [
+    {
+      "id": "NFR-4",
+      "title": "Experiência Conversacional",
+      "description": "Assessment deve parecer uma conversa natural, não um formulário. Aurora reage às respostas com micro-feedbacks."
+    },
+    {
+      "id": "NFR-5",
+      "title": "Recovery de Sessão",
+      "description": "Se o cliente fechar o browser no meio do assessment, deve poder retomar de onde parou."
+    },
+    {
+      "id": "NFR-6",
+      "title": "Tempo Total",
+      "description": "Assessment completo em ≤35 minutos incluindo âncoras e campo aberto."
+    }
+  ],
+  "constraints": [
+    {
+      "id": "CON-4",
+      "description": "Questionário baseado no run-assessment.md existente (43 perguntas, 5 seções)"
+    },
+    {
+      "id": "CON-5",
+      "description": "Aurora usa Claude Haiku para perguntas, Claude Sonnet para análise final (custo otimizado)"
+    },
+    {
+      "id": "CON-6",
+      "description": "Âncoras de calibração são opcionais — assessment funciona sem nenhuma"
+    }
+  ],
+  "stories_outline": [
+    {
+      "id": "S5",
+      "title": "Aurora Assessment Mode — motor de perguntas conversacional",
+      "refs": ["FR-5", "NFR-4", "NFR-5"],
+      "agent": "@dev"
+    },
+    {
+      "id": "S6",
+      "title": "Âncoras de Calibração + Campo Aberto",
+      "refs": ["FR-6", "FR-7"],
+      "agent": "@dev"
+    },
+    {
+      "id": "S7",
+      "title": "Geração automática de profile.json via assessment",
+      "refs": ["FR-8", "NFR-6"],
+      "agent": "@dev"
+    }
+  ]
+}

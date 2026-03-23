@@ -1,0 +1,66 @@
+{
+  "metadata": {
+    "spec_id": "SPEC-GZD-001",
+    "reviewer": "@qa (Quinn)",
+    "date": "2026-03-23",
+    "verdict": "APPROVED",
+    "score": 4.3
+  },
+  "dimensions": {
+    "completude": 4,
+    "clareza": 5,
+    "testabilidade": 4,
+    "seguranca": 3,
+    "rastreabilidade": 5,
+    "viabilidade": 5
+  },
+  "issues": [
+    {
+      "id": "SEC-1",
+      "severity": "HIGH",
+      "title": "API client-profile sem rate limiting",
+      "recommendation": "Adicionar rate limiting (10 req/min/IP). Considerar token no link.",
+      "refs": ["FR-1", "FR-2", "NFR-1"]
+    },
+    {
+      "id": "SEC-2",
+      "severity": "HIGH",
+      "title": "Slugs previsíveis permitem enumeração",
+      "recommendation": "Adicionar token curto no link ou documentar risco aceito.",
+      "refs": ["NFR-1"]
+    },
+    {
+      "id": "SPEC-1",
+      "severity": "MEDIUM",
+      "title": "uid indefinido para localStorage no modo sem login",
+      "recommendation": "Usar client_{slug} como uid até login.",
+      "refs": ["FR-1", "FR-3"]
+    },
+    {
+      "id": "SPEC-2",
+      "severity": "MEDIUM",
+      "title": "S2 pode ser paralela a S1",
+      "recommendation": "Remover dependência S2→S1, executar em paralelo.",
+      "refs": []
+    },
+    {
+      "id": "SPEC-3",
+      "severity": "MEDIUM",
+      "title": "Falta AC para profile.json inexistente",
+      "recommendation": "Página 'perfil em preparação' quando profile.json não existe.",
+      "refs": ["FR-1"]
+    },
+    {
+      "id": "UX-1",
+      "severity": "LOW",
+      "title": "Experiência mobile não especificada",
+      "recommendation": "Verificar responsividade no fluxo pré-renderizado.",
+      "refs": ["NFR-2"]
+    }
+  ],
+  "actions_for_sm": [
+    "S1: Incorporar rate limiting + uid para modo sem login + AC para profile ausente",
+    "S2: Remover dependência de S1, pode ser paralela",
+    "S4: Considerar token no link como alternativa ao magic link completo"
+  ]
+}

@@ -450,6 +450,7 @@
 
 <!-- Scripts -->
 <script src="js/auth-optional.js"></script>
+<script src="js/client-loader.js"></script>
 <script src="js/psicometria-upload.js"></script>
 <script src="js/psicometria-renderer.js"></script>
 <script src="js/aurora.js"></script>
@@ -458,7 +459,13 @@
   var LS_DATA_BASE = 'psicometria_data_v2';
   var LS_SRC_BASE = 'psicometria_source_v2';
 
-  function _uid() { return Auth.getUserId(); }
+  function _uid() {
+    // If on client route, use client-specific uid
+    if (ClientLoader.isClientRoute()) {
+      return ClientLoader.getUserId(ClientLoader.getSlug());
+    }
+    return Auth.getUserId();
+  }
   function userKey(base) { var id = _uid(); return id ? base + '_' + id : base + '_anon'; }
 
   function boot() {
@@ -471,7 +478,59 @@
       initAurora();
     }
 
-    // L1: Check localStorage (instant)
+    function customizePremiumBanner(data) {
+      var doneText = document.querySelector('.psico-upload-done__text');
+      var doneFile = document.getElementById('psico-done-file');
+      if (doneText) doneText.textContent = 'Seu mapa de genialidade';
+      if (doneFile && data.profile) doneFile.textContent = data.profile.name + ' \u00b7 Dashboard Premium';
+    }
+
+    function showPending(message) {
+      var upload = document.getElementById('psico-upload');
+      if (upload) {
+        upload.innerHTML =
+          '<div style="text-align:center;padding:3rem 1.5rem;">' +
+            '<div style="font-size:2.5rem;margin-bottom:1rem;">&#10024;</div>' +
+            '<h2 style="font-size:1.3rem;font-weight:700;margin-bottom:0.5rem;color:var(--color-text-primary);">Perfil em preparação</h2>' +
+            '<p style="color:var(--color-text-muted);font-size:0.9rem;max-width:400px;margin:0 auto;">' +
+              (message || 'Seu grimório está sendo preparado com carinho. Em breve você terá acesso ao seu dashboard completo.') +
+            '</p>' +
+          '</div>';
+      }
+    }
+
+    // Client route: /c/{slug}
+    if (ClientLoader.isClientRoute()) {
+      // Hide hero section for premium clients
+      var hero = document.querySelector('.psico-hero');
+      if (hero) hero.style.display = 'none';
+
+      var clientState = ClientLoader.load();
+      if (clientState && clientState.data) {
+        // Cached data — render immediately
+        renderFromData(clientState.data);
+        customizePremiumBanner(clientState.data);
+        PsicoUpload.init();
+        return;
+      }
+      if (clientState && clientState.slug) {
+        // Fetch from API
+        ClientLoader.fetchProfile(clientState.slug, function(data, info) {
+          if (data) {
+            renderFromData(data);
+            customizePremiumBanner(data);
+            PsicoUpload.init();
+          } else if (info && info.pending) {
+            showPending(info.message);
+          } else {
+            showPending('Erro ao carregar perfil. Tente novamente em instantes.');
+          }
+        });
+        return;
+      }
+    }
+
+    // Standard flow: check localStorage
     var saved = localStorage.getItem(dataKey);
     if (saved) {
       try {

@@ -1,0 +1,136 @@
+{
+  "metadata": {
+    "id": "SPEC-GZD-001",
+    "title": "Multi-Cliente Premium com Aurora Contínua",
+    "author": "@pm (Morgan)",
+    "date": "2026-03-23",
+    "status": "draft",
+    "complexity": "SIMPLE",
+    "project": "genius-zone-dashboard"
+  },
+  "problem_statement": "O dashboard atual é single-user: cada pessoa faz upload do próprio documento para gerar a análise psicométrica. Não existe mecanismo para entrega premium curada por um operador, nem acesso contínuo do cliente à Aurora sem refazer o upload.",
+  "business_goals": [
+    "Escalar o serviço de mapeamento de Zona de Genialidade para múltiplos clientes",
+    "Oferecer entrega premium com grimório curado + dashboard personalizado + link exclusivo",
+    "Permitir acesso contínuo do cliente à Aurora como mentora pessoal 24/7",
+    "Manter experiência profissional e zero-fricção no primeiro acesso"
+  ],
+  "target_users": [
+    {
+      "persona": "Operador (Eliezer)",
+      "description": "Prepara o grimório e profile.json de cada cliente, gera link exclusivo"
+    },
+    {
+      "persona": "Cliente Premium",
+      "description": "Recebe link exclusivo, acessa dashboard pré-preenchido, usa Aurora continuamente",
+      "examples": ["Jivan Pramod", "Paulo Victor Nunes", "Dr. Airton Charles Chaves Junior", "Orli Silva"]
+    }
+  ],
+  "functional_requirements": [
+    {
+      "id": "FR-1",
+      "title": "Rota de Acesso por Cliente",
+      "description": "Sistema de rotas /c/{client-slug} que carrega dashboard pré-preenchido com dados do cliente",
+      "priority": "MUST",
+      "acceptance_criteria": [
+        "URL /c/jivan-pramod carrega dashboard com dados do Jivan",
+        "URL /c/paulo-victor-nunes carrega dashboard (quando profile.json existir)",
+        "Slug inválido mostra mensagem amigável de perfil não encontrado",
+        "Rewrite no Vercel mapeia /c/* para index.html"
+      ]
+    },
+    {
+      "id": "FR-2",
+      "title": "Profile.json por Cliente",
+      "description": "Cada cliente possui um profile.json com dados psicométricos dos 7 frameworks na pasta grimoires/{slug}/",
+      "priority": "MUST",
+      "acceptance_criteria": [
+        "profile.json segue estrutura idêntica ao output de /api/analyze (fill_psychometric_dashboard)",
+        "API /api/client-profile?slug={slug} retorna o profile.json do cliente",
+        "Validação de slug: apenas alfanumérico e hífens, sem path traversal",
+        "profile.json do Jivan Pramod gerado a partir do grimório existente"
+      ]
+    },
+    {
+      "id": "FR-3",
+      "title": "Dashboard Pré-Renderizado",
+      "description": "Ao acessar /c/{slug}, o dashboard renderiza imediatamente com dados pré-curados, sem necessidade de upload",
+      "priority": "MUST",
+      "acceptance_criteria": [
+        "Dashboard aparece preenchido ao carregar a página (sem upload)",
+        "Aurora é ativada automaticamente com dados do perfil",
+        "Upload permanece disponível como opção de 'reanalizar'",
+        "Dados são salvos no localStorage para acesso offline subsequente"
+      ]
+    },
+    {
+      "id": "FR-4",
+      "title": "Magic Link Login para Aurora Contínua",
+      "description": "Cliente pode fazer login via magic link (email) para acessar Aurora com quota pessoal",
+      "priority": "SHOULD",
+      "acceptance_criteria": [
+        "Botão 'Acessar Aurora' envia magic link por email via Supabase",
+        "Após login, Aurora funciona com quota de 20 msg/dia vinculada ao user",
+        "Sem login, Aurora funciona em modo anônimo (quota por IP/session)",
+        "Login persiste entre sessões via Supabase session"
+      ]
+    }
+  ],
+  "non_functional_requirements": [
+    {
+      "id": "NFR-1",
+      "title": "Segurança",
+      "description": "Slug sanitizado contra path traversal, profile.json servido apenas de grimoires/"
+    },
+    {
+      "id": "NFR-2",
+      "title": "Performance",
+      "description": "Dashboard pré-renderizado carrega em <2s (dados já no JSON, sem API de análise)"
+    },
+    {
+      "id": "NFR-3",
+      "title": "Compatibilidade",
+      "description": "Manter fluxo atual de upload intacto — modo premium é adicional, não substitutivo"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "CON-1",
+      "description": "Stack existente: Vanilla JS, Vercel Serverless, Supabase (opcional), Anthropic API"
+    },
+    {
+      "id": "CON-2",
+      "description": "Sem framework frontend — manter padrão vanilla JS do projeto"
+    },
+    {
+      "id": "CON-3",
+      "description": "profile.json deve ser compatível com estrutura retornada por /api/analyze"
+    }
+  ],
+  "stories_outline": [
+    {
+      "id": "S1",
+      "title": "Rota /c/{slug} + API client-profile",
+      "refs": ["FR-1", "FR-2", "NFR-1"],
+      "agent": "@dev"
+    },
+    {
+      "id": "S2",
+      "title": "Profile.json do Jivan Pramod (primeiro cliente)",
+      "refs": ["FR-2"],
+      "agent": "@dev"
+    },
+    {
+      "id": "S3",
+      "title": "Dashboard pré-renderizado via client-loader",
+      "refs": ["FR-3", "NFR-2", "NFR-3"],
+      "agent": "@dev"
+    },
+    {
+      "id": "S4",
+      "title": "Magic Link Login + Aurora contínua",
+      "refs": ["FR-4"],
+      "agent": "@dev"
+    }
+  ]
+}

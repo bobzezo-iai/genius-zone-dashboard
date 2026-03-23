@@ -12,6 +12,10 @@ var PsicoUpload = (function() {
   var _curiosityTimer = null;
 
   function _uid() {
+    // Client route: use client-specific uid
+    if (typeof ClientLoader !== 'undefined' && ClientLoader.isClientRoute()) {
+      return ClientLoader.getUserId(ClientLoader.getSlug());
+    }
     var user = typeof Auth !== 'undefined' && Auth.getUser ? Auth.getUser() : null;
     return user ? user.id : null;
   }

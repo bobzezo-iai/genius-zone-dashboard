@@ -1,0 +1,152 @@
+{
+  "profile": {
+    "name": "Jivan Pramod",
+    "initials": "JP",
+    "currentZone": "Excelência → Genialidade",
+    "zoneTransition": "Em transição ativa para a Zona de Genialidade através do reposicionamento estratégico no iAi.ECOssistema",
+    "tags": ["Estrategista Relacional", "Arquiteto de Cuidado", "Facilitador Internacional", "Star/Supporter"]
+  },
+  "zones": {
+    "genialidade": 45,
+    "excelencia": 35,
+    "competencia": 15,
+    "incompetencia": 5
+  },
+  "zonesReading": "<strong>Jivan</strong>, sua Zona de Genialidade (45%) está na <em>facilitação de transformação relacional</em> — a leitura emocional profunda, a criação de espaços de vulnerabilidade, a condução de grupos em estados alterados de conexão. Essa inteligência foi forjada em 13+ anos de prática terapêutica, 100+ workshops em 18 países e 7.000+ pessoas impactadas. Sua Zona de Excelência (35%) — coaching, formação de coaches e produção de conteúdo digital — é impressionante, mas não é onde você é <strong>insubstituível</strong>. O caminho é claro: migrar tempo da Excelência para a Genialidade, especialmente com o papel de Arquiteto de Cuidado no Ciclo das Estações.",
+  "talents": {
+    "labels": ["Conexão", "Empatia", "Ativação", "Comando", "Individualização"],
+    "scores": [9, 9, 8, 8, 8],
+    "reading": "<strong>Jivan</strong>, seus talentos dominantes revelam um perfil raro: <em>Conexão</em> e <em>Empatia</em> no topo (9/10 cada) mostram que você literalmente sente o campo relacional — enxerga vínculos invisíveis entre pessoas e decifra emoções não ditas. <em>Ativação</em> (8/10) garante que insights virem ação imediata — você não fica na teoria. <em>Comando</em> (8/10) é sua presença que ocupa a sala, e <em>Individualização</em> (8/10) é o que faz cada pessoa se sentir vista de forma única nos seus workshops."
+  },
+  "kolbe": {
+    "investigador": 6,
+    "seguimento": 5,
+    "inicioRapido": 9,
+    "implementador": 7,
+    "reading": "<strong>Jivan</strong>, seu perfil Kolbe revela um <em>Início Rápido</em> dominante (9/10) — você é um empreendedor serial nato, abrindo frentes em 18 países, múltiplos institutos e plataformas simultâneas. Seu <em>Implementador</em> (7/10) mostra que não fica só na ideia: workshops presenciais, prática corporal, ação tangível. O <em>Seguimento</em> (5/10) é seu ponto de atenção — múltiplos projetos simultâneos sem sistematização podem diluir impacto. O reposicionamento no ecossistema pode resolver isso ao dar estrutura ao seu impulso criativo."
+  },
+  "hormozi": {
+    "resultadoSonhado": 9,
+    "probabilidade": 7,
+    "tempoEspera": 6,
+    "esforco": 5,
+    "score": 7.6,
+    "reading": "A <em>Equação de Valor</em> de <strong>Jivan</strong> mostra um <strong>Resultado Sonhado altíssimo</strong> (9/10) — transformação profunda de relações humanas é uma promessa poderosa. A <em>Probabilidade Percebida</em> (7/10) é sólida graças ao track record real (7.000+ pessoas), mas falta mensuração objetiva. O desafio está no <em>Tempo</em> (6/10) e <em>Esforço</em> (5/10): imersões geram resultado rápido, mas mudança profunda exige presença e vulnerabilidade do participante. Com o ecossistema, a escala pode melhorar esses denominadores."
+  },
+  "wealthProfile": {
+    "name": "Star/Supporter Híbrido",
+    "description": "Brilha no palco (Star) mas seu verdadeiro poder é elevar os outros (Supporter). A transição para o papel de liderança no Ciclo das Estações amplifica o lado Supporter — de entertainer a líder estratégico que cuida de quem cuida."
+  },
+  "fascinationProfile": {
+    "name": "Passion + Power",
+    "archetype": "O Líder Apaixonado",
+    "description": "Lidera pela intensidade emocional e pela presença de comando. As pessoas não seguem Jivan por lógica, seguem pelo que sentem quando estão perto dele. Essa combinação é rara e magnética — perfeita para liderar experiências de transformação."
+  },
+  "profilesReading": "<strong>Jivan</strong>, a convergência do seu perfil <em>Star/Supporter</em> (Wealth Dynamics) com <em>Passion + Power</em> (Fascination) revela um padrão claro: você é um <strong>catalisador humano</strong>. No palco, magnetiza. No bastidor, eleva. A transição de Star puro para Star/Supporter é exatamente o que o papel de Arquiteto de Cuidado exige — brilhar não para si, mas para iluminar os outros. Sua fascinação por Paixão + Poder significa que as pessoas sentem sua presença antes de ouvir suas palavras.",
+  "uniqueAbility": {
+    "description": "Criar espaços de transformação relacional onde pessoas acessam vulnerabilidade, conexão autêntica e regeneração emocional — combinando inteligência corporal, neurociência e hospitalidade de alto padrão.",
+    "alignment": 80,
+    "timeInZone": 65,
+    "potential": 95,
+    "reading": "<strong>Jivan</strong>, sua <em>Habilidade Única</em> está em criar espaços onde transformação relacional acontece naturalmente. Seu alinhamento atual (80%) é alto quando facilita, mas cai em tarefas administrativas. Você passa 65% do tempo na zona — muito conteúdo digital consome tempo que poderia ser investido em facilitação pura. O número mais impressionante é o <strong>potencial: 95%</strong>. Com o reposicionamento no ecossistema — Ciclo das Estações + Hospedarias Biofílicas — seu tempo na zona de genialidade pode subir dramaticamente."
+  },
+  "convergence": {
+    "labels": ["Inteligência Relacional", "Liderança Magnética", "Criação de Experiências", "Escala Digital", "Gestão Operacional", "Pensamento Sistêmico"],
+    "current": [9, 8, 9, 7, 5, 6],
+    "potential": [10, 9, 10, 8, 7, 9],
+    "insights": [
+      { "color": "pink", "text": "Inteligência Relacional (9/10) e Criação de Experiências (9/10) são seus eixos mais fortes — convergência natural entre Empatia, Conexão e facilitação" },
+      { "color": "gold", "text": "Liderança Magnética (8/10) sustentada por Comando + Passion/Power — presença que transforma ambientes" },
+      { "color": "purple", "text": "Gap em Gestão Operacional (5/10) e Pensamento Sistêmico (6/10) — exatamente o que o ecossistema iAi pode complementar" },
+      { "color": "green", "text": "Potencial de 10/10 em Inteligência Relacional e Criação de Experiências — com Hospedarias Biofílicas, seu teto desaparece" }
+    ],
+    "reading": "A convergência dos 7 frameworks revela que <strong>Jivan</strong> tem dois eixos superlativos: <em>Inteligência Relacional</em> e <em>Criação de Experiências</em>, ambos em 9/10. Isso não é coincidência — é a soma de Empatia + Conexão (CliftonStrengths), Início Rápido + Implementador (Kolbe), e Passion + Power (Fascination). O gap mais relevante está em <em>Gestão Operacional</em> (5/10) — mas isso não precisa ser corrigido em Jivan, precisa ser <strong>complementado</strong> por parceiros e sistemas no ecossistema."
+  },
+  "timeDistribution": {
+    "current": {
+      "genialidade": 45,
+      "excelencia": 35,
+      "competencia": 15,
+      "incompetencia": 5
+    },
+    "target": {
+      "genialidade": 65,
+      "excelencia": 25,
+      "competencia": 8,
+      "incompetencia": 2
+    },
+    "reading": "Hoje, <strong>Jivan</strong> investe 45% na Zona de Genialidade — bom, mas aquém do potencial. A meta para 90 dias é chegar a <strong>65%</strong>, reduzindo Competência (15%→8%) e Incompetência (5%→2%) através de delegação e sistemas. A Excelência (35%→25%) diminui conforme o conteúdo digital é sistematizado e Jivan foca no que só ele pode fazer: facilitar transformação presencial e arquitetar experiências de cuidado."
+  },
+  "recommendation": "Jivan, seu caminho é claro: migrar de produtor de conteúdo digital para Arquiteto de Experiências de Cuidado. Delegue gestão operacional, sistematize conteúdo, e invista seu tempo em facilitação presencial e liderança do Ciclo das Estações. É onde você é insubstituível.",
+  "actions": [
+    {
+      "label": "Delegar gestão operacional",
+      "description": "Identificar e delegar 3 tarefas administrativas recorrentes que consomem tempo na Zona de Competência",
+      "timeframe": "Esta semana",
+      "frameworks": "Hendricks, Sullivan"
+    },
+    {
+      "label": "Mapear facilitações prioritárias",
+      "description": "Listar as próximas 5 oportunidades de facilitação presencial e priorizá-las sobre produção de conteúdo",
+      "timeframe": "Próximas 2 semanas",
+      "frameworks": "Hendricks, Kolbe"
+    },
+    {
+      "label": "Estruturar Ciclo das Estações v1",
+      "description": "Criar o framework inicial do programa 'Cuidar de Quem Cuida' aplicando os 5 Pilares",
+      "timeframe": "Próximo mês",
+      "frameworks": "Sullivan, Hamilton, Hormozi"
+    },
+    {
+      "label": "Sistematizar conteúdo digital",
+      "description": "Criar processo de produção de conteúdo que não dependa de Jivan 100% do tempo",
+      "timeframe": "Próximo mês",
+      "frameworks": "Kolbe, Hormozi"
+    },
+    {
+      "label": "Desenhar experiência-piloto Ravi",
+      "description": "Conceber o primeiro protótipo de hospedaria biofílica — experiência, serviço, atmosfera",
+      "timeframe": "90 dias",
+      "frameworks": "Hendricks, Sullivan, Hamilton"
+    }
+  ],
+  "actionPlan": {
+    "thisWeek": [
+      "Identificar e delegar 3 tarefas administrativas para liberar 5h/semana",
+      "Agendar 2 sessões de facilitação presencial nas próximas 3 semanas",
+      "Mapear quais atividades atuais estão na Zona de Incompetência e eliminá-las"
+    ],
+    "nextTwoWeeks": [
+      "Listar e priorizar as 5 próximas oportunidades de facilitação sobre conteúdo digital",
+      "Criar brief do Ciclo das Estações v1 com os 5 Pilares como base",
+      "Definir parceiro/sistema para gestão operacional do Instituto JP"
+    ],
+    "nextMonth": [
+      "Lançar framework do Ciclo das Estações para teste com grupo piloto",
+      "Implementar processo de produção de conteúdo com equipe (não solo)",
+      "Iniciar desenho conceitual da experiência Ravi com base na gestão hoteleira 5 estrelas"
+    ],
+    "doNot": [
+      "NÃO aceitar novos projetos de conteúdo digital que não estejam alinhados com o reposicionamento",
+      "NÃO gastar tempo em tarefas técnicas de TI ou contabilidade — delegue imediatamente",
+      "NÃO tentar sistematizar tudo sozinho — seu Seguimento (5/10) não é para isso",
+      "NÃO abandonar a facilitação presencial em favor de escala digital — sua genialidade é presencial",
+      "NÃO confundir Zona de Excelência com Zona de Genialidade — coaching é excelente, mas facilitação de transformação é genial"
+    ]
+  },
+  "recommendedSquad": {
+    "domain": {
+      "name": "Experiências de Cuidado & Hospitalidade Biofílica",
+      "description": "Squad focado em criar, sistematizar e escalar experiências de transformação relacional integradas com hospitalidade de alto padrão"
+    },
+    "purpose": {
+      "name": "Arquitetar o Ciclo das Estações + Ravi Experience",
+      "description": "Desenvolver o framework de cuidado para cuidadores e o conceito operacional das hospedarias biofílicas"
+    },
+    "targetUser": {
+      "name": "Profissionais de cuidado e participantes de imersões",
+      "description": "Terapeutas, facilitadores, líderes comunitários que sustentam ecossistemas de bem-estar e precisam de regeneração"
+    },
+    "executionMode": "Incremental"
+  }
+}

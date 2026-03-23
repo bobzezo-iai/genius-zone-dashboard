@@ -535,9 +535,28 @@
             customizePremiumBanner(data);
             PsicoUpload.init();
           } else if (info && info.pending) {
-            // No profile.json — hide upload and start assessment mode
+            // No profile.json — show assessment landing and start Aurora assessment
             var upEl = document.getElementById('psico-upload');
-            if (upEl) upEl.style.display = 'none';
+            if (upEl) upEl.innerHTML =
+              '<div style="text-align:center;padding:4rem 1.5rem 2rem;">' +
+                '<div style="font-size:3rem;margin-bottom:1rem;">✨</div>' +
+                '<h2 style="font-size:1.5rem;font-weight:800;margin-bottom:0.75rem;color:var(--color-text-primary);">Descubra sua Zona de Genialidade</h2>' +
+                '<p style="color:var(--color-text-muted);font-size:0.9rem;max-width:440px;margin:0 auto 1.5rem;line-height:1.6;">' +
+                  'A Aurora vai guiar você por um assessment de ~30 minutos para mapear seu perfil através de 7 frameworks científicos convergentes.' +
+                '</p>' +
+                '<div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem;">' +
+                  '<div style="background:var(--color-bg-card);border:1px solid var(--color-border);border-radius:12px;padding:0.75rem 1rem;font-size:0.75rem;color:var(--color-text-muted);">' +
+                    '<strong style="color:var(--color-pink);">43</strong> perguntas' +
+                  '</div>' +
+                  '<div style="background:var(--color-bg-card);border:1px solid var(--color-border);border-radius:12px;padding:0.75rem 1rem;font-size:0.75rem;color:var(--color-text-muted);">' +
+                    '<strong style="color:var(--color-accent-purple);">7</strong> frameworks' +
+                  '</div>' +
+                  '<div style="background:var(--color-bg-card);border:1px solid var(--color-border);border-radius:12px;padding:0.75rem 1rem;font-size:0.75rem;color:var(--color-text-muted);">' +
+                    '<strong style="color:var(--color-accent-gold);">~30</strong> minutos' +
+                  '</div>' +
+                '</div>' +
+                '<p style="color:var(--color-text-muted);font-size:0.8rem;">Responda no chat da Aurora ao lado →</p>' +
+              '</div>';
             Aurora.initAssessment(clientState.slug);
           } else {
             showPending('Erro ao carregar perfil. Tente novamente em instantes.');

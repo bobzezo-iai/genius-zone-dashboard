@@ -263,6 +263,7 @@
     </div>
     <div style="display:flex;gap:0.5rem;margin-left:auto;flex-shrink:0">
       <button class="psico-upload-done__re" id="psico-reanalyze-btn">Re-analisar</button>
+      <button class="psico-upload-done__re" id="psico-reassess-btn" style="display:none">Refazer Assessment</button>
     </div>
   </div>
 
@@ -483,6 +484,19 @@
       var doneFile = document.getElementById('psico-done-file');
       if (doneText) doneText.textContent = 'Seu mapa de genialidade';
       if (doneFile && data.profile) doneFile.textContent = data.profile.name + ' \u00b7 Dashboard Premium';
+      // Show reassess button for client routes
+      var reassessBtn = document.getElementById('psico-reassess-btn');
+      if (reassessBtn && ClientLoader.isClientRoute()) {
+        reassessBtn.style.display = '';
+        reassessBtn.addEventListener('click', function() {
+          var slug = ClientLoader.getSlug();
+          var uid = ClientLoader.getUserId(slug);
+          localStorage.removeItem(LS_DATA_BASE + '_' + uid);
+          localStorage.removeItem(LS_SRC_BASE + '_' + uid);
+          localStorage.removeItem('assessment_progress_' + slug);
+          location.reload();
+        });
+      }
     }
 
     function showPending(message) {
@@ -521,7 +535,8 @@
             customizePremiumBanner(data);
             PsicoUpload.init();
           } else if (info && info.pending) {
-            showPending(info.message);
+            // No profile.json — start assessment mode
+            Aurora.initAssessment(clientState.slug);
           } else {
             showPending('Erro ao carregar perfil. Tente novamente em instantes.');
           }

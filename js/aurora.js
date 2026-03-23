@@ -65,6 +65,8 @@ var Aurora = (function() {
 
   function initAssessment(slug) {
     assessmentSlug = slug;
+    // Set initial state BEFORE rendering panel so UI shows assessment mode
+    assessmentState = { phase: 'welcome', sectionIdx: 0, questionIdx: 0, answers: {}, anchors: {}, additional: '' };
     renderFab();
     // Auto-open panel and start assessment
     setTimeout(function() {
@@ -76,7 +78,6 @@ var Aurora = (function() {
           addMessage('assistant', 'Bem-vindo de volta! Você parou na **' + getCurrentProgressText() + '**. Vamos continuar?');
           resumeAssessment();
         } else {
-          assessmentState = { phase: 'welcome', sectionIdx: 0, questionIdx: 0, answers: {}, anchors: {}, additional: '' };
           showWelcome();
         }
       });

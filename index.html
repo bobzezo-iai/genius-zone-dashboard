@@ -535,7 +535,9 @@
             customizePremiumBanner(data);
             PsicoUpload.init();
           } else if (info && info.pending) {
-            // No profile.json — start assessment mode
+            // No profile.json — hide upload and start assessment mode
+            var upEl = document.getElementById('psico-upload');
+            if (upEl) upEl.style.display = 'none';
             Aurora.initAssessment(clientState.slug);
           } else {
             showPending('Erro ao carregar perfil. Tente novamente em instantes.');
